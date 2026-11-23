@@ -27,6 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  const candidCoupleImg = document.getElementById('candid-couple-img');
+  const candidPhotoLoader = document.getElementById('candid-photo-loader');
+  
+  function revealCandidPhoto() {
+    if (candidCoupleImg) {
+      candidCoupleImg.classList.add('is-loaded');
+    }
+    if (candidPhotoLoader) {
+      candidPhotoLoader.classList.add('is-hidden');
+    }
+  }
+  
+  if (candidCoupleImg) {
+    if (candidCoupleImg.complete && candidCoupleImg.naturalWidth > 0) {
+      revealCandidPhoto();
+    } else {
+      candidCoupleImg.addEventListener('load', revealCandidPhoto, { once: true });
+      candidCoupleImg.addEventListener('error', revealCandidPhoto, { once: true });
+    }
+  }
+  
   if (heroCoupleImg) {
     if (heroCoupleImg.complete && heroCoupleImg.naturalWidth > 0) {
       revealHeroPhoto();
