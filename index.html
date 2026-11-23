@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shuba Vivaha | Sachin &amp; Sahana</title>
+  <!-- Preload cover image immediately before render-blocking scripts -->
+  <link rel="preload" as="image" href="SHR08429.webp" type="image/webp" fetchpriority="high" />
   <meta name="description" content="Wedding Invitation of Sachin & Sahana — Sunday, February 07, 2027 at Bhatte Vinayaka Temple, Kekkaru & Reception on Monday, February 08, 2027 at Holanagadde, Kumta." />
 
   <!-- Open Graph / WhatsApp Link Preview -->
@@ -80,18 +82,18 @@
       will-change: transform, opacity;
     }
 
-    /* Ambient blurred backdrop so wide desktop monitors look seamless around the portrait */
+    /* Instant 0ms inline blurred backdrop (zero extra network request) */
     .hero-ambient-bg {
       position: absolute;
       inset: -24px;
-      background-image: url('SHR08429.jpg');
+      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAqABwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwUGBP/EACYQAAICAQIFBAMAAAAAAAAAAAECAAMRBBIFEyEiMTI0QVFhcYH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAwAB/8QAGxEAAwEAAwEAAAAAAAAAAAAAAAERAhIhIjH/2gAMAwEAAhEDEQA/AJ0DtyRkiErw65A6wFFrHpjzGKbKwAV8/MlDZzTNfQpQHPWZzX+I3v0o2KynKmZ9oXpszA9NG4wX85a2KjB+jN2lVra8E5i9KkanmMRu+oeovWycskZll8Hge2DOnCVjtQeYr5z/AFmU9GmQcMZ7OpKycKDJx4zJ2ndqim5dpOzwJp0DG/UVpj5g7vQYfgPvkiT8gyyv1Hbwx1Hwsm6m7Oso9V7Kz9SZq9H9gz2i0p//2Q==');
       background-size: cover;
       background-position: center 22%;
       filter: blur(26px) brightness(0.42) saturate(1.15);
       transform: scale(1.08);
     }
 
-    /* Main crisp couple portrait */
+    /* Main crisp couple portrait with instant blurred preview while WebP loads */
     .hero-photo-frame {
       position: relative;
       width: 100%;
@@ -99,6 +101,9 @@
       max-width: 640px;
       margin: 0 auto;
       z-index: 2;
+      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAqABwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwUGBP/EACYQAAICAQIFBAMAAAAAAAAAAAECAAMRBBIFEyEiMTI0QVFhcYH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAwAB/8QAGxEAAwEAAwEAAAAAAAAAAAAAAAERAhIhIjH/2gAMAwEAAhEDEQA/AJ0DtyRkiErw65A6wFFrHpjzGKbKwAV8/MlDZzTNfQpQHPWZzX+I3v0o2KynKmZ9oXpszA9NG4wX85a2KjB+jN2lVra8E5i9KkanmMRu+oeovWycskZll8Hge2DOnCVjtQeYr5z/AFmU9GmQcMZ7OpKycKDJx4zJ2ndqim5dpOzwJp0DG/UVpj5g7vQYfgPvkiT8gyyv1Hbwx1Hwsm6m7Oso9V7Kz9SZq9H9gz2i0p//2Q==');
+      background-size: cover;
+      background-position: center 20%;
     }
 
     .hero-photo-frame img {
@@ -296,9 +301,19 @@
     <!-- Blurred ambient fill for wide screens -->
     <div class="hero-ambient-bg" aria-hidden="true"></div>
 
-    <!-- Crisp Portrait Photo -->
+    <!-- Crisp Portrait Photo (WebP primary + Progressive JPEG fallback) -->
     <div class="hero-photo-frame">
-      <img src="SHR08429.jpg" alt="Sachin and Sahana" />
+      <picture>
+        <source srcset="SHR08429.webp" type="image/webp" />
+        <img
+          src="SHR08429.jpg"
+          alt="Sachin and Sahana"
+          width="682"
+          height="1024"
+          fetchpriority="high"
+          decoding="sync"
+        />
+      </picture>
     </div>
 
     <!-- Top & Bottom Dark Maroon Vignettes -->
@@ -550,15 +565,22 @@
              ==================================================================== -->
         <section aria-labelledby="events-heading" class="py-4 reveal-section">
           <div class="text-center max-w-2xl mx-auto mb-8">
-            <!-- Candid Keepsake Medallion (Auto-hides cleanly if SHR08703.jpg is not uploaded) -->
+            <!-- Candid Keepsake Medallion (Lazy-loaded WebP + JPEG fallback) -->
             <div class="candid-keepsake mb-5 flex justify-center">
               <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 border-2 border-gold bg-ivory-warm shadow-md">
-                <img
-                  src="SHR08703.jpg"
-                  alt="Sachin and Sahana candid portrait"
-                  class="w-full h-full object-cover object-top rounded-full"
-                  onerror="this.closest('.candid-keepsake').style.display='none'"
-                />
+                <picture>
+                  <source srcset="SHR08703.webp" type="image/webp" />
+                  <img
+                    src="SHR08703.jpg"
+                    alt="Sachin and Sahana candid portrait"
+                    width="360"
+                    height="540"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover object-top rounded-full"
+                    onerror="this.closest('.candid-keepsake').style.display='none'"
+                  />
+                </picture>
               </div>
             </div>
 
