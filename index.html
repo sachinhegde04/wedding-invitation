@@ -732,8 +732,112 @@
           </div>
         </section>
 
+        <!-- Ornate Gold Lotus Divider -->
+        <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
+          <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
+            <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+            <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+            <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
+            <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
+            <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+          </svg>
+        </div>
+
         <!-- ==================================================================
-             SECTION 5: FOOTER WITH TRADITIONAL LOTUS DIVIDER
+             SECTION 5: GUESTBOOK & WEDDING WISHES
+             ================================================================== -->
+        <section id="guestbook-section" aria-labelledby="guestbook-heading" class="py-4 reveal-section">
+          <div class="text-center mb-7">
+            <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1">
+              Blessings &amp; Wishes
+            </span>
+            <h2 id="guestbook-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon">
+              Guestbook
+            </h2>
+            <p class="font-serif italic text-base sm:text-lg text-maroon-light mt-1">
+              Leave a heartfelt blessing or note for Sachin &amp; Sahana
+            </p>
+          </div>
+
+          <!-- Royal Maroon & Gold Guestbook Box -->
+          <div class="guestbook-panel rounded-2xl p-5 sm:p-8 md:p-10">
+            <!-- Guestbook Wish Submission Form -->
+            <form id="guestbook-form" class="space-y-4" novalidate>
+              <div>
+                <label for="guest-name" class="sr-only">Your Name</label>
+                <input
+                  type="text"
+                  id="guest-name"
+                  name="guestName"
+                  placeholder="Enter your name*"
+                  maxlength="60"
+                  required
+                  class="guestbook-input w-full rounded-lg px-4 py-3 font-body text-sm sm:text-base"
+                />
+              </div>
+
+              <div>
+                <label for="guest-wish" class="sr-only">Your Wishes</label>
+                <textarea
+                  id="guest-wish"
+                  name="guestWish"
+                  rows="4"
+                  placeholder="Enter your wishes*"
+                  maxlength="400"
+                  required
+                  class="guestbook-input w-full rounded-lg px-4 py-3 font-body text-sm sm:text-base resize-y"
+                ></textarea>
+              </div>
+
+              <!-- Form Action Row: Magic-Wand Wish Generator + Send Wishes CTA -->
+              <div class="flex items-center justify-between gap-3 pt-1">
+                <button
+                  type="button"
+                  id="inspire-wish-btn"
+                  title="Auto-fill a sample wedding blessing"
+                  aria-label="Auto-fill a sample wedding blessing"
+                  class="guestbook-wand-btn inline-flex items-center justify-center w-11 h-11 rounded-lg shrink-0"
+                >
+                  <svg class="w-5 h-5 text-gold-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 4V2m0 14v-2M8 9h2m10 0h2M17.8 11.8L19 13M17.8 6.2L19 5M12.2 6.2L11 5M3 21l9-9" />
+                    <circle cx="15" cy="9" r="1.3" fill="currentColor" />
+                  </svg>
+                </button>
+
+                <button
+                  type="submit"
+                  id="send-wishes-btn"
+                  class="guestbook-submit-btn px-6 sm:px-8 py-3 rounded-lg font-decorative text-xs sm:text-sm font-bold tracking-[0.14em] uppercase"
+                >
+                  Send Wishes
+                </button>
+              </div>
+            </form>
+
+            <!-- Submitted Guest Wishes Wall -->
+            <div class="mt-7 pt-6 border-t border-gold/30">
+              <div class="flex items-center justify-between mb-3.5">
+                <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-light">
+                  Warm Blessings from Loved Ones
+                </span>
+                <span id="wishes-count" class="font-body text-xs text-gold-pale/80">
+                  3 Wishes
+                </span>
+              </div>
+
+              <div id="wishes-list" class="guestbook-wishes-scroll space-y-3.5" aria-live="polite">
+                <!-- Populated dynamically by js/main.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 6: FOOTER WITH TRADITIONAL LOTUS DIVIDER
              ================================================================== -->
         <footer class="mt-10 pt-6 text-center reveal-section">
           <div class="mb-6 flex items-center justify-center" aria-hidden="true">
@@ -750,9 +854,14 @@
             </svg>
           </div>
 
-          <p class="font-decorative text-lg sm:text-xl md:text-2xl font-bold text-maroon tracking-wide mb-2">
-            Sachin ❤️ Sahana | February 07 &amp; 08, 2027
-          </p>
+          <div class="mb-3 space-y-1">
+            <p class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide">
+              Sachin ❤️ Sahana
+            </p>
+            <p class="font-decorative text-sm sm:text-base md:text-lg font-bold text-gold-dark tracking-[0.14em]">
+              February 07 &amp; 08, 2027
+            </p>
+          </div>
 
           <p class="font-serif italic text-lg sm:text-xl text-maroon-light max-w-lg mx-auto">
             Your presence and blessings are our greatest gift

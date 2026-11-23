@@ -650,3 +650,102 @@ body {
   transform-origin: center;
   animation: sanctumShimmer 2.6s ease-in-out infinite;
 }
+
+/* ==========================================================================
+   4. GUESTBOOK & WEDDING WISHES SECTION
+   ========================================================================== */
+.guestbook-panel {
+  background: linear-gradient(165deg, #5C0B15 0%, #48070F 55%, #37050B 100%);
+  border: 1.5px solid #C59B27;
+  box-shadow:
+    inset 0 0 0 4px rgba(197, 155, 39, 0.22),
+    0 14px 34px -8px rgba(58, 6, 12, 0.35);
+  position: relative;
+}
+
+.guestbook-input {
+  background: rgba(255, 253, 249, 0.05);
+  border: 1.25px solid rgba(226, 194, 101, 0.55);
+  color: #FDF8F0;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guestbook-input::placeholder {
+  color: rgba(244, 231, 195, 0.62);
+}
+
+.guestbook-input:focus {
+  outline: none;
+  border-color: #F4E7C3;
+  background: rgba(255, 253, 249, 0.09);
+  box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.22);
+}
+
+.guestbook-wand-btn {
+  background: rgba(255, 253, 249, 0.07);
+  border: 1.25px solid rgba(226, 194, 101, 0.55);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.guestbook-wand-btn:hover {
+  background: rgba(226, 194, 101, 0.18);
+  border-color: #F4E7C3;
+  transform: translateY(-1px);
+}
+
+.guestbook-wand-btn:active {
+  transform: scale(0.95);
+}
+
+.guestbook-submit-btn {
+  background: linear-gradient(135deg, #F4D58D 0%, #E2C265 50%, #C59B27 100%);
+  color: #3D070E;
+  border: 1px solid #FFF3C4;
+  box-shadow: 0 6px 18px -4px rgba(18, 2, 4, 0.55);
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guestbook-submit-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1.5px);
+  box-shadow: 0 10px 22px -4px rgba(18, 2, 4, 0.65);
+}
+
+.guestbook-submit-btn:active {
+  transform: translateY(0);
+}
+
+.guestbook-wishes-scroll {
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.guestbook-wishes-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.guestbook-wishes-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 253, 249, 0.04);
+  border-radius: 999px;
+}
+
+.guestbook-wishes-scroll::-webkit-scrollbar-thumb {
+  background: rgba(197, 155, 39, 0.5);
+  border-radius: 999px;
+}
+
+.wish-item-card {
+  background: rgba(255, 253, 249, 0.045);
+  border: 1px solid rgba(226, 194, 101, 0.42);
+  border-radius: 10px;
+  padding: 0.9rem 1.05rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.wish-item-card:hover {
+  border-color: rgba(244, 231, 195, 0.75);
+  background: rgba(255, 253, 249, 0.075);
+}

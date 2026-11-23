@@ -226,4 +226,175 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /* ------------------------------------------------------------------------
+     6. Interactive Guestbook & Wedding Wishes Wall
+        - Works immediately out-of-the-box with curated blessings + localStorage.
+        - Optional: Paste a Google Apps Script Web App URL into GUESTBOOK_API_URL
+          to store and share wishes across all guests in real time.
+     ------------------------------------------------------------------------ */
+  const GUESTBOOK_API_URL = 'https://script.google.com/macros/s/AKfycbw1J0o7v-h_rAP4jCVHJZoFvS0-TSJI2IckH4aX5oleyCDgwscy9bBCq2bjVd0ISPQn/exec';
+  const STORAGE_KEY = 'sachin_sahana_wedding_wishes_v1';
+
+  const defaultWishes = [
+    {
+      name: 'Family & Elders',
+      wish: 'May Lord Ganapathi bless Sachin & Sahana with a lifetime of love, harmony, prosperity, and endless happiness together.',
+      timestamp: '11/23/2026, 7:30:00 PM',
+    },
+    {
+      name: 'Friends from Bengaluru',
+      wish: 'Heartiest congratulations Sachin & Sahana! Wishing you both an unforgettable wedding day and a beautiful journey ahead.',
+      timestamp: '11/22/2026, 6:15:00 PM',
+    },
+    {
+      name: 'Cousins & Well-Wishers',
+      wish: 'Sending our warmest blessings and love as you begin this wonderful new chapter together. Shubhamasthu!',
+      timestamp: '11/21/2026, 5:00:00 PM',
+    },
+  ];
+
+  const sampleBlessings = [
+    'Heartiest congratulations Sachin & Sahana! Wishing you both a lifetime of love, laughter, and togetherness.',
+    'May your marriage be blessed with endless joy, mutual respect, and boundless prosperity. Shubhamasthu!',
+    'Sending warmest wishes on your Shubha Vivaha! May every day of your new journey together be brighter than the last.',
+    'Wishing the lovely couple a joyous celebration and a lifetime of cherished memories together!',
+    'May Lord Vinayaka shower His choicest blessings upon Sachin & Sahana today and always.',
+  ];
+
+  const guestbookForm = document.getElementById('guestbook-form');
+  const guestNameInput = document.getElementById('guest-name');
+  const guestWishInput = document.getElementById('guest-wish');
+  const inspireWishBtn = document.getElementById('inspire-wish-btn');
+  const wishesListEl = document.getElementById('wishes-list');
+  const wishesCountEl = document.getElementById('wishes-count');
+
+  let sampleIdx = 0;
+
+  function loadStoredWishes() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [...defaultWishes];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) && parsed.length > 0 ? parsed : [...defaultWishes];
+    } catch (e) {
+      return [...defaultWishes];
+    }
+  }
+
+  function saveStoredWishes(wishes) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
+    } catch (e) {
+      console.warn('Could not persist wishes locally:', e);
+    }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function formatCurrentTimestamp() {
+    return new Date().toLocaleString('en-US', {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    });
+  }
+
+  function renderWishes(wishes) {
+    if (!wishesListEl) return;
+    if (wishesCountEl) {
+      wishesCountEl.textContent = `${wishes.length} ${wishes.length === 1 ? 'Wish' : 'Wishes'}`;
+    }
+
+    wishesListEl.innerHTML = wishes
+      .map(
+        (item) => `
+        <article class="wish-item-card">
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1.5">
+            <h3 class="font-body text-sm sm:text-base font-bold text-ivory">
+              ${escapeHtml(item.name)}
+            </h3>
+            <time class="font-body text-[11px] sm:text-xs text-gold-light/85">
+              ${escapeHtml(item.timestamp)}
+            </time>
+          </div>
+          <p class="font-body text-xs sm:text-sm text-gold-pale/95 leading-relaxed whitespace-pre-line">
+            ${escapeHtml(item.wish)}
+          </p>
+        </article>
+      `
+      )
+      .join('');
+  }
+
+  let currentWishes = loadStoredWishes();
+  renderWishes(currentWishes);
+
+  // Optional remote Google Apps Script sync if GUESTBOOK_API_URL is configured
+  if (GUESTBOOK_API_URL) {
+    fetch(GUESTBOOK_API_URL)
+      .then((res) => res.json())
+      .then((remoteWishes) => {
+        if (Array.isArray(remoteWishes) && remoteWishes.length > 0) {
+          currentWishes = remoteWishes;
+          saveStoredWishes(currentWishes);
+          renderWishes(currentWishes);
+        }
+      })
+      .catch((err) => console.warn('Using local guestbook fallback:', err));
+  }
+
+  // Magic-wand / sparkle button fills a sample wedding blessing
+  if (inspireWishBtn && guestWishInput) {
+    inspireWishBtn.addEventListener('click', () => {
+      guestWishInput.value = sampleBlessings[sampleIdx % sampleBlessings.length];
+      sampleIdx += 1;
+      guestWishInput.focus();
+    });
+  }
+
+  if (guestbookForm && guestNameInput && guestWishInput) {
+    guestbookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameVal = guestNameInput.value.trim();
+      const wishVal = guestWishInput.value.trim();
+
+      if (!nameVal || !wishVal) {
+        showToast('Please enter both your name and wedding wishes.');
+        if (!nameVal) guestNameInput.focus();
+        else guestWishInput.focus();
+        return;
+      }
+
+      const newEntry = {
+        name: nameVal,
+        wish: wishVal,
+        timestamp: formatCurrentTimestamp(),
+      };
+
+      currentWishes = [newEntry, ...currentWishes];
+      saveStoredWishes(currentWishes);
+      renderWishes(currentWishes);
+
+      if (GUESTBOOK_API_URL) {
+        fetch(GUESTBOOK_API_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newEntry),
+        }).catch((err) => console.warn('Remote wish post failed:', err));
+      }
+
+      guestbookForm.reset();
+      showToast('Thank you! Your wishes have been added.');
+    });
+  }
 });
