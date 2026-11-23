@@ -1,19 +1,68 @@
 /* ==========================================================================
    SHUBHA VIVAHA — SACHIN & SAHANA WEDDING INVITATION INTERACTIVITY
-   1. Scroll-Up Curtain Parallax & Floating Temple FAB Compact Mode
-   2. Live IST Countdown Timer (Sunday, February 07, 2027 at 10:36 AM)
-   3. Smooth Scroll-Reveal Animations via IntersectionObserver
-   4. One-Tap Venue Address Clipboard Helper with Toast Feedback
+   1. 3D Envelope Opening Reveal & Post-Open Temple Button Activation
+   2. Scroll Curtain Parallax & Floating Temple FAB Compact Mode
+   3. Live IST Countdown Timer (Sunday, February 07, 2027 at 10:36 AM)
+   4. Smooth Scroll-Reveal Animations via IntersectionObserver
+   5. One-Tap Venue Address Clipboard Helper with Toast Feedback
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
-     1. Smooth Scroll-Up Curtain Transition & Tap-to-Open Trigger
+     1. 3D Envelope Opening Choreography
+     ------------------------------------------------------------------------ */
+  const envelopeOverlay = document.getElementById('envelope-overlay');
+  const envelopeTriggerBtn = document.getElementById('envelope-trigger-btn');
+  const floatingTempleBtn = document.getElementById('floating-temple-btn');
+  let envelopeOpened = false;
+
+  function openWeddingEnvelope() {
+    if (envelopeOpened || !envelopeOverlay) return;
+    envelopeOpened = true;
+
+    // Step 1: Lift the gold wax seal & hinge the top V-flap open in 3D
+    envelopeOverlay.classList.add('is-opening');
+
+    // Step 2: Emit warm golden sunburst glow from the opened envelope
+    setTimeout(() => {
+      envelopeOverlay.classList.add('is-bursting');
+    }, 420);
+
+    // Step 3: Fade out the envelope overlay to reveal the couple photo cover
+    setTimeout(() => {
+      envelopeOverlay.classList.add('is-fading-out');
+    }, 900);
+
+    // Step 4: Unlock page scroll and reveal the floating Temple Map button
+    setTimeout(() => {
+      document.body.classList.remove('envelope-locked');
+      if (floatingTempleBtn) {
+        floatingTempleBtn.classList.add('is-revealed');
+      }
+    }, 1250);
+
+    // Step 5: Remove overlay from interaction layer once transition finishes
+    setTimeout(() => {
+      envelopeOverlay.style.display = 'none';
+    }, 1650);
+  }
+
+  if (envelopeOverlay) {
+    envelopeOverlay.addEventListener('click', openWeddingEnvelope);
+  }
+  if (envelopeTriggerBtn) {
+    envelopeTriggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openWeddingEnvelope();
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     2. Smooth Scroll Curtain Transition & Tap-to-View Trigger
      ------------------------------------------------------------------------ */
   const heroCover = document.getElementById('hero-cover');
   const invitationSheet = document.getElementById('invitation-sheet');
   const openBtn = document.getElementById('open-invitation-btn');
-  const floatingTempleBtn = document.getElementById('floating-temple-btn');
 
   if (openBtn && invitationSheet) {
     openBtn.addEventListener('click', () => {
@@ -25,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHeroParallax() {
     const scrollY = window.scrollY || window.pageYOffset;
 
-    // Collapse floating temple button to icon-only as soon as user starts scrolling
+    // Collapse floating temple button to icon-only once user starts scrolling
     if (floatingTempleBtn) {
       if (scrollY > 20) {
         floatingTempleBtn.classList.add('is-compact');
@@ -61,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   /* ------------------------------------------------------------------------
-     2. Live Countdown Timer to Sunday, February 07, 2027 at 10:36 AM IST
+     3. Live Countdown Timer to Sunday, February 07, 2027 at 10:36 AM IST
      ------------------------------------------------------------------------ */
   const targetDate = new Date('2027-02-07T10:36:00+05:30').getTime();
 
@@ -109,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
 
   /* ------------------------------------------------------------------------
-     3. Smooth Scroll-Reveal Animations via IntersectionObserver
+     4. Smooth Scroll-Reveal Animations via IntersectionObserver
      ------------------------------------------------------------------------ */
   const revealSections = document.querySelectorAll('.reveal-section');
 
@@ -132,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     4. Copy Venue Address Helper with Toast Feedback
+     5. Copy Venue Address Helper with Toast Feedback
      ------------------------------------------------------------------------ */
   const copyButtons = document.querySelectorAll('.copy-venue-btn');
   const toastEl = document.getElementById('toast-message');

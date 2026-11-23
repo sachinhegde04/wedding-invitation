@@ -6,12 +6,12 @@ Digital wedding invitation website for **Sachin & Sahana** (`February 07 & 08, 2
 
 ```text
 wedding-invitation/
-├── index.html                  # Semantic HTML layout & invitation content
+├── index.html                  # 3D envelope intro, photo cover, and silk-ivory invitation layout
 ├── README.md                   # Project structure & deployment notes
 ├── css/
-│   └── styles.css              # Custom Kanjeevaram silk/gold styling, curtain & temple FAB animations
+│   └── styles.css              # 3D envelope opening animations, Kanjeevaram silk/gold styles & temple FAB
 ├── js/
-│   └── main.js                 # Scroll curtain parallax, IST countdown timer, scroll reveal & clipboard helper
+│   └── main.js                 # Envelope reveal sequence, IST countdown timer, scroll reveal & copy helper
 └── assets/
     └── images/
         ├── SHR08429.webp       # Optimized opening cover portrait (WebP)
