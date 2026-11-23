@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+Kannada:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+Kannada:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
   />
   
   <script>
@@ -289,57 +289,99 @@
     .lotus-glow {
       animation: gentleGlow 4s ease-in-out infinite;
     }
+    
     /* ==========================================================================
-       3. FLOATING HINDU TEMPLE VENUE BUTTON (BOTTOM-RIGHT STICKY FAB)
-       ========================================================================== */
+    3. FLOATING HINDU TEMPLE VENUE BUTTON (BOTTOM-RIGHT STICKY FAB)
+    ========================================================================== */
     @keyframes templeHalo {
       0%, 100% {
         box-shadow:
-          inset 0 0 0 1.5px rgba(226, 194, 101, 0.45),
-          0 10px 26px -4px rgba(34, 4, 9, 0.7),
-          0 0 0 0 rgba(197, 155, 39, 0.45);
+        inset 0 0 0 1.5px rgba(226, 194, 101, 0.45),
+        0 10px 26px -4px rgba(34, 4, 9, 0.7),
+        0 0 0 0 rgba(197, 155, 39, 0.45);
       }
       50% {
         box-shadow:
-          inset 0 0 0 1.5px rgba(226, 194, 101, 0.75),
-          0 14px 30px -4px rgba(34, 4, 9, 0.8),
-          0 0 0 8px rgba(197, 155, 39, 0);
+        inset 0 0 0 1.5px rgba(226, 194, 101, 0.75),
+        0 14px 30px -4px rgba(34, 4, 9, 0.8),
+        0 0 0 8px rgba(197, 155, 39, 0);
       }
     }
-
+    
     @keyframes sanctumShimmer {
       0%, 100% { opacity: 0.75; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.06); }
     }
-
+    
     .floating-temple-btn {
       position: fixed;
-      bottom: 1.25rem;
-      right: 1rem;
+      /* Positioned above the hero text & scroll-up prompt on mobile so there is zero overlap */
+      bottom: 17.25rem;
+      right: 0.85rem;
       z-index: 45;
+      padding: 0.45rem 0.95rem 0.45rem 0.5rem;
+      gap: 0.6rem;
       background: linear-gradient(135deg, #4A0810 0%, #6B0F1A 50%, #3E060D 100%);
       border: 1.5px solid #E2C265;
       color: #FDF8F0;
       animation: templeHalo 3.2s ease-in-out infinite;
-      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+      transition:
+      bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      right 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      padding 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      gap 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease;
     }
-
+    
+    /* Compact icon-only state once the user starts scrolling */
+    .floating-temple-btn.is-compact {
+      bottom: 1.35rem;
+      right: 1rem;
+      padding: 0.35rem;
+      gap: 0;
+    }
+    
     @media (min-width: 640px) {
       .floating-temple-btn {
+        bottom: 2rem;
+        right: 1.75rem;
+        padding: 0.55rem 1.15rem 0.55rem 0.65rem;
+        gap: 0.65rem;
+      }
+      
+      .floating-temple-btn.is-compact {
         bottom: 1.75rem;
         right: 1.75rem;
+        padding: 0.4rem;
+        gap: 0;
       }
     }
-
+    
+    .temple-label-wrap {
+      max-width: 150px;
+      opacity: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      transition:
+      max-width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.22s ease;
+    }
+    
+    .floating-temple-btn.is-compact .temple-label-wrap {
+      max-width: 0;
+      opacity: 0;
+    }
+    
     .floating-temple-btn:hover {
-      transform: translateY(-3px) scale(1.02);
+      transform: translateY(-3px) scale(1.03);
       border-color: #FFF3C4;
     }
-
+    
     .floating-temple-btn:active {
       transform: translateY(0) scale(0.98);
     }
-
+    
     .temple-sanctum-glow {
       transform-origin: center;
       animation: sanctumShimmer 2.6s ease-in-out infinite;
@@ -866,14 +908,14 @@ SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
       </p>
       
       <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
-        <a href="tel:9901880395" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+        <a href="tel:8762325090" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
           <svg class="w-4 h-4 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
           <span>8762325090</span>
         </a>
         <span class="text-gold">|</span>
-        <a href="tel:7022658456" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+        <a href="tel:7090112105" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
           <span>7090112105</span>
         </a>
       </div>
@@ -934,54 +976,66 @@ SECTION 5: FOOTER WITH TRADITIONAL LOTUS DIVIDER
 id="toast-message"
 role="status"
 aria-live="polite"
-class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-maroon-deep text-gold-pale border border-gold shadow-xl font-body text-sm opacity-0 pointer-events-none transition-opacity duration-300"
+class="fixed bottom-20 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-maroon-deep text-gold-pale border border-gold shadow-xl font-body text-sm opacity-0 pointer-events-none transition-opacity duration-300"
 >
 Address copied!
 </div>
-<!-- Floating Bottom-Right Hindu Temple Wedding Venue Map Button -->
-  <a
-    href="https://maps.app.goo.gl/8JXVXGQ88UJYDAbn8"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Open Bhatte Vinayaka Temple wedding venue location on Google Maps"
-    title="Bhatte Vinayaka Temple, Kekkaru — Open in Google Maps"
-    class="floating-temple-btn group inline-flex items-center gap-2.5 pl-2.5 pr-4 py-2 sm:pl-3 sm:pr-5 sm:py-2.5 rounded-full backdrop-blur-md"
-  >
-    <!-- Ornate Gold Medallion with Animated South Indian Hindu Temple Gopuram SVG -->
-    <span class="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-maroon-deep border border-gold/80 shadow-inner shrink-0">
-      <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle class="temple-sanctum-glow" cx="32" cy="14" r="9" fill="#E2C265" fill-opacity="0.22" />
-        <path d="M32 4 L34.2 9.5 H29.8 L32 4 Z" fill="#FFF3C4" />
-        <circle cx="32" cy="11.5" r="2.3" fill="#E2C265" stroke="#4A0810" stroke-width="0.8" />
-        <path d="M23 19 L26 14 H38 L41 19 H23 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
-        <path d="M19 26 L22 20 H42 L45 26 H19 Z" fill="#E2C265" stroke="#6B0F1A" stroke-width="1" stroke-linejoin="round" />
-        <circle cx="26" cy="23" r="1" fill="#6B0F1A" />
-        <circle cx="32" cy="23" r="1" fill="#6B0F1A" />
-        <circle cx="38" cy="23" r="1" fill="#6B0F1A" />
-        <path d="M15 33 L18 27 H46 L49 33 H15 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
-        <rect x="17" y="33" width="30" height="19" rx="1" fill="#FDF8F0" stroke="#C59B27" stroke-width="1.2" />
-        <rect x="19.5" y="34" width="3" height="17" fill="#C59B27" />
-        <rect x="41.5" y="34" width="3" height="17" fill="#C59B27" />
-        <path class="temple-sanctum-glow" d="M27 51 V41 C27 38.2 29.2 36 32 36 C34.8 36 37 38.2 37 41 V51 H27 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.2" />
-        <path class="temple-sanctum-glow" d="M32 41.5 C30.5 44 30.5 46 32 47.5 C33.5 46 33.5 44 32 41.5 Z" fill="#FFF3C4" />
-        <rect x="13" y="52" width="38" height="3.5" rx="1" fill="#E2C265" />
-        <rect x="10" y="55.5" width="44" height="3.5" rx="1.2" fill="#C59B27" />
-      </svg>
-    </span>
 
-    <!-- Venue Text Label -->
-    <span class="flex flex-col text-left leading-tight">
-      <span class="font-body uppercase tracking-[0.16em] text-[9px] sm:text-[10px] font-semibold text-gold-light flex items-center gap-1">
-        <span>Wedding Venue</span>
-        <svg class="w-2.5 h-2.5 text-gold-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
-        </svg>
-      </span>
-      <span class="font-serif text-sm sm:text-base font-bold text-ivory tracking-wide">
-        Temple Map
-      </span>
-    </span>
-  </a>
+<!-- Floating Bottom-Right Hindu Temple Wedding Venue Map Button -->
+<a
+id="floating-temple-btn"
+href="https://maps.app.goo.gl/8JXVXGQ88UJYDAbn8"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Open Bhatte Vinayaka Temple wedding venue location on Google Maps"
+title="Bhatte Vinayaka Temple, Kekkaru — Open in Google Maps"
+class="floating-temple-btn group inline-flex items-center rounded-full backdrop-blur-md"
+>
+<!-- Ornate Gold Medallion with Animated South Indian Hindu Temple Gopuram SVG -->
+<span class="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-maroon-deep border border-gold/80 shadow-inner shrink-0">
+  <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Radiating Golden Aura behind Kalasha -->
+    <circle class="temple-sanctum-glow" cx="32" cy="14" r="9" fill="#E2C265" fill-opacity="0.22" />
+    <!-- Sacred Kalasha Finial at Gopuram Apex -->
+    <path d="M32 4 L34.2 9.5 H29.8 L32 4 Z" fill="#FFF3C4" />
+    <circle cx="32" cy="11.5" r="2.3" fill="#E2C265" stroke="#4A0810" stroke-width="0.8" />
+    <!-- Tier 1 (Top Gopuram Shikhara) -->
+    <path d="M23 19 L26 14 H38 L41 19 H23 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
+    <!-- Tier 2 (Middle Gopuram) -->
+    <path d="M19 26 L22 20 H42 L45 26 H19 Z" fill="#E2C265" stroke="#6B0F1A" stroke-width="1" stroke-linejoin="round" />
+    <circle cx="26" cy="23" r="1" fill="#6B0F1A" />
+    <circle cx="32" cy="23" r="1" fill="#6B0F1A" />
+    <circle cx="38" cy="23" r="1" fill="#6B0F1A" />
+    <!-- Tier 3 (Lower Gopuram Cornice) -->
+    <path d="M15 33 L18 27 H46 L49 33 H15 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
+    <!-- Temple Pillars & Sanctum Wall -->
+    <rect x="17" y="33" width="30" height="19" rx="1" fill="#FDF8F0" stroke="#C59B27" stroke-width="1.2" />
+    <!-- Left & Right Temple Pillars -->
+    <rect x="19.5" y="34" width="3" height="17" fill="#C59B27" />
+    <rect x="41.5" y="34" width="3" height="17" fill="#C59B27" />
+    <!-- Glowing Sanctum Archway (Garbhagriha) -->
+    <path class="temple-sanctum-glow" d="M27 51 V41 C27 38.2 29.2 36 32 36 C34.8 36 37 38.2 37 41 V51 H27 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.2" />
+    <!-- Sacred Sanctum Lamp Flame inside Doorway -->
+    <path class="temple-sanctum-glow" d="M32 41.5 C30.5 44 30.5 46 32 47.5 C33.5 46 33.5 44 32 41.5 Z" fill="#FFF3C4" />
+    <!-- Stepped Temple Base (Adhishthana) -->
+    <rect x="13" y="52" width="38" height="3.5" rx="1" fill="#E2C265" />
+    <rect x="10" y="55.5" width="44" height="3.5" rx="1.2" fill="#C59B27" />
+  </svg>
+</span>
+
+<!-- Venue Text Label (Shown at top, collapses to icon-only on scroll) -->
+<span class="temple-label-wrap flex flex-col text-left leading-tight">
+  <span class="font-body uppercase tracking-[0.16em] text-[9px] sm:text-[10px] font-semibold text-gold-light flex items-center gap-1">
+    <span>Wedding Venue</span>
+    <svg class="w-2.5 h-2.5 text-gold-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+    </svg>
+  </span>
+  <span class="font-serif text-sm sm:text-base font-bold text-ivory tracking-wide">
+    Temple Map
+  </span>
+</span>
+</a>
 
 <!-- ==========================================================================
 INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
@@ -994,6 +1048,7 @@ INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
     const heroCover = document.getElementById('hero-cover');
     const invitationSheet = document.getElementById('invitation-sheet');
     const openBtn = document.getElementById('open-invitation-btn');
+    const floatingTempleBtn = document.getElementById('floating-temple-btn');
     
     if (openBtn && invitationSheet) {
       openBtn.addEventListener('click', () => {
@@ -1003,18 +1058,31 @@ INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
     
     let ticking = false;
     function updateHeroParallax() {
-      if (!heroCover) return;
       const scrollY = window.scrollY || window.pageYOffset;
-      const vh = window.innerHeight || 1;
-      const progress = Math.min(Math.max(scrollY / vh, 0), 1);
       
-      // Gently scale down and fade the photo curtain as the invitation slides up over it
-      const scale = 1 - progress * 0.05;
-      const opacity = 1 - progress * 0.55;
-      heroCover.style.transform = `scale(${scale.toFixed(4)})`;
-      heroCover.style.opacity = opacity.toFixed(4);
+      // Collapse floating temple button to icon-only as soon as user starts scrolling
+      if (floatingTempleBtn) {
+        if (scrollY > 20) {
+          floatingTempleBtn.classList.add('is-compact');
+        } else {
+          floatingTempleBtn.classList.remove('is-compact');
+        }
+      }
+      
+      if (heroCover) {
+        const vh = window.innerHeight || 1;
+        const progress = Math.min(Math.max(scrollY / vh, 0), 1);
+        
+        // Gently scale down and fade the photo curtain as the invitation slides up over it
+        const scale = 1 - progress * 0.05;
+        const opacity = 1 - progress * 0.55;
+        heroCover.style.transform = `scale(${scale.toFixed(4)})`;
+        heroCover.style.opacity = opacity.toFixed(4);
+      }
       ticking = false;
     }
+    
+    updateHeroParallax();
     
     window.addEventListener(
     'scroll',
