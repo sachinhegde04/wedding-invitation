@@ -637,7 +637,7 @@ body {
 .floating-temple-btn {
   position: fixed;
   /* Positioned above the hero text & scroll prompt on mobile so there is zero overlap */
-  bottom: 17.25rem;
+  bottom: 17.50rem;
   right: 0.85rem;
   z-index: 45;
   padding: 0.45rem 0.95rem 0.45rem 0.5rem;
