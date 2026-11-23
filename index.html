@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shuba Vivaha | Sachin &amp; Sahana</title>
+  <title>Shubha Vivaha | Sachin &amp; Sahana</title>
   <!-- Preload cover image immediately before render-blocking scripts -->
   <link rel="preload" as="image" href="SHR08429.webp" type="image/webp" fetchpriority="high" />
   <meta name="description" content="Wedding Invitation of Sachin & Sahana — Sunday, February 07, 2027 at Bhatte Vinayaka Temple, Kekkaru & Reception on Monday, February 08, 2027 at Holanagadde, Kumta." />
-
+  
   <!-- Open Graph / WhatsApp Link Preview -->
-  <meta property="og:title" content="Shuba Vivaha | Sachin &amp; Sahana" />
+  <meta property="og:title" content="Shubha Vivaha | Sachin &amp; Sahana" />
   <meta property="og:description" content="Cordially inviting you to bless Sachin &amp; Sahana on Sunday, February 07, 2027." />
   <meta property="og:image" content="SHR08429.jpg" />
   <meta property="og:type" content="website" />
-
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <!-- Google Fonts: Cinzel Decorative, Cormorant Garamond, and Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+Kannada:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-
+  
   <script>
     tailwind.config = {
       theme: {
@@ -49,18 +49,18 @@
           },
           fontFamily: {
             decorative: ['"Cinzel Decorative"', 'serif'],
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', '"Noto Serif Kannada"', 'Georgia', 'serif'],
             body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
           },
         },
       },
     };
   </script>
-
+  
   <style>
     /* ==========================================================================
-       1. FULL-SCREEN OPENING PHOTO CURTAIN
-       ========================================================================== */
+    1. FULL-SCREEN OPENING PHOTO CURTAIN
+    ========================================================================== */
     html, body {
       margin: 0;
       padding: 0;
@@ -68,7 +68,7 @@
       color: #3B1216;
       overflow-x: hidden;
     }
-
+    
     .hero-curtain {
       position: sticky;
       top: 0;
@@ -81,7 +81,7 @@
       transform-origin: center top;
       will-change: transform, opacity;
     }
-
+    
     /* Instant 0ms inline blurred backdrop (zero extra network request) */
     .hero-ambient-bg {
       position: absolute;
@@ -92,7 +92,7 @@
       filter: blur(26px) brightness(0.42) saturate(1.15);
       transform: scale(1.08);
     }
-
+    
     /* Main crisp couple portrait with instant blurred preview while WebP loads */
     .hero-photo-frame {
       position: relative;
@@ -105,7 +105,7 @@
       background-size: cover;
       background-position: center 20%;
     }
-
+    
     .hero-photo-frame img {
       width: 100%;
       height: 100%;
@@ -113,7 +113,7 @@
       object-position: center 20%;
       display: block;
     }
-
+    
     @media (min-width: 768px) {
       .hero-photo-frame {
         border-left: 1.5px solid rgba(197, 155, 39, 0.45);
@@ -121,7 +121,7 @@
         box-shadow: 0 0 80px rgba(0, 0, 0, 0.85);
       }
     }
-
+    
     /* Gradient scrims for legible gold & ivory text over top and bottom of photo */
     .hero-scrim-top {
       position: absolute;
@@ -133,7 +133,7 @@
       z-index: 3;
       pointer-events: none;
     }
-
+    
     .hero-scrim-bottom {
       position: absolute;
       bottom: 0;
@@ -141,23 +141,23 @@
       right: 0;
       height: 54%;
       background: linear-gradient(
-        0deg,
-        rgba(34, 4, 9, 0.96) 0%,
-        rgba(56, 8, 15, 0.84) 42%,
-        rgba(56, 8, 15, 0.35) 75%,
-        transparent 100%
+      0deg,
+      rgba(34, 4, 9, 0.96) 0%,
+      rgba(56, 8, 15, 0.84) 42%,
+      rgba(56, 8, 15, 0.35) 75%,
+      transparent 100%
       );
       z-index: 3;
       pointer-events: none;
     }
-
+    
     .hero-gold-shimmer {
       background: linear-gradient(135deg, #F4E7C3 0%, #E2C265 35%, #FFF6D6 55%, #C59B27 85%, #F4E7C3 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
+    
     @keyframes floatUpCue {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-7px); }
@@ -165,10 +165,10 @@
     .scroll-up-cue {
       animation: floatUpCue 2.1s ease-in-out infinite;
     }
-
+    
     /* ==========================================================================
-       2. SLIDING INVITATION SHEET (RISES OVER PHOTO ON SCROLL UP)
-       ========================================================================== */
+    2. SLIDING INVITATION SHEET (RISES OVER PHOTO ON SCROLL UP)
+    ========================================================================== */
     .invitation-sheet-wrapper {
       position: relative;
       z-index: 10;
@@ -178,24 +178,24 @@
       border-top: 2px solid #C59B27;
       background-color: #540A13;
       background-image:
-        radial-gradient(circle at 50% 0%, rgba(197, 155, 39, 0.22) 0%, transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(197, 155, 39, 0.18) 0%, transparent 55%),
-        url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C59B27' stroke-opacity='0.11' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='48'/%3E%3Ccircle cx='60' cy='60' r='34'/%3E%3Ccircle cx='60' cy='60' r='18'/%3E%3Cpath d='M60 12 L68 36 L92 28 L76 48 L108 60 L76 72 L92 92 L68 84 L60 108 L52 84 L28 92 L44 72 L12 60 L44 48 L28 28 L52 36 Z'/%3E%3Ccircle cx='0' cy='0' r='24'/%3E%3Ccircle cx='120' cy='0' r='24'/%3E%3Ccircle cx='0' cy='120' r='24'/%3E%3Ccircle cx='120' cy='120' r='24'/%3E%3C/g%3E%3C/svg%3E");
+      radial-gradient(circle at 50% 0%, rgba(197, 155, 39, 0.22) 0%, transparent 55%),
+      radial-gradient(circle at 50% 100%, rgba(197, 155, 39, 0.18) 0%, transparent 55%),
+      url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C59B27' stroke-opacity='0.11' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='48'/%3E%3Ccircle cx='60' cy='60' r='34'/%3E%3Ccircle cx='60' cy='60' r='18'/%3E%3Cpath d='M60 12 L68 36 L92 28 L76 48 L108 60 L76 72 L92 92 L68 84 L60 108 L52 84 L28 92 L44 72 L12 60 L44 48 L28 28 L52 36 Z'/%3E%3Ccircle cx='0' cy='0' r='24'/%3E%3Ccircle cx='120' cy='0' r='24'/%3E%3Ccircle cx='0' cy='120' r='24'/%3E%3Ccircle cx='120' cy='120' r='24'/%3E%3C/g%3E%3C/svg%3E");
       box-shadow: 0 -24px 60px rgba(18, 2, 4, 0.85);
     }
-
+    
     /* Warm Kanjeevaram Silk Ivory invitation sheet with delicate woven texture */
     .silk-ivory-sheet {
       background-color: #FDF8F0;
       background-image:
-        radial-gradient(ellipse at top, rgba(197, 155, 39, 0.09) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom, rgba(197, 155, 39, 0.09) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C59B27' stroke-opacity='0.065' stroke-width='0.75'%3E%3Cpath d='M0 30 Q15 22 30 30 T60 30'/%3E%3Cpath d='M0 15 Q15 7 30 15 T60 15'/%3E%3Cpath d='M0 45 Q15 37 30 45 T60 45'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/svg%3E");
+      radial-gradient(ellipse at top, rgba(197, 155, 39, 0.09) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(197, 155, 39, 0.09) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C59B27' stroke-opacity='0.065' stroke-width='0.75'%3E%3Cpath d='M0 30 Q15 22 30 30 T60 30'/%3E%3Cpath d='M0 15 Q15 7 30 15 T60 15'/%3E%3Cpath d='M0 45 Q15 37 30 45 T60 45'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/svg%3E");
       box-shadow:
-        0 25px 60px -15px rgba(25, 2, 5, 0.75),
-        0 0 0 1px rgba(197, 155, 39, 0.45);
+      0 25px 60px -15px rgba(25, 2, 5, 0.75),
+      0 0 0 1px rgba(197, 155, 39, 0.45);
     }
-
+    
     /* Double-lined antique gold border effect */
     .double-gold-frame {
       border: 2px solid #C59B27;
@@ -208,7 +208,7 @@
       border: 1px solid rgba(197, 155, 39, 0.75);
       pointer-events: none;
     }
-
+    
     /* Subtle metallic gold shimmer gradient for traditional titles */
     .gold-foil-text {
       background: linear-gradient(135deg, #8E6910 0%, #C59B27 35%, #DFBD5B 50%, #9E7716 75%, #6B0F1A 100%);
@@ -216,7 +216,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
+    
     /* Ornate event & family cards with subtle inner gold trim */
     .ornate-card {
       background: linear-gradient(180deg, #FFFDF9 0%, #FAF2E4 100%);
@@ -237,25 +237,25 @@
       transform: translateY(-3px);
       box-shadow: 0 16px 34px -8px rgba(107, 15, 26, 0.18);
     }
-
+    
     /* Countdown traditional gold-bordered ivory boxes */
     .countdown-box {
       background: linear-gradient(180deg, #FFFDF9 0%, #F7EFE1 100%);
       border: 2px solid #C59B27;
       box-shadow:
-        inset 0 0 0 3px #FDF8F0,
-        inset 0 0 0 4px rgba(197, 155, 39, 0.55),
-        0 10px 22px -6px rgba(107, 15, 26, 0.14);
+      inset 0 0 0 3px #FDF8F0,
+      inset 0 0 0 4px rgba(197, 155, 39, 0.55),
+      0 10px 22px -6px rgba(107, 15, 26, 0.14);
     }
-
+    
     /* Royal Maroon & Gold Interactive Button */
     .btn-royal {
       background: linear-gradient(135deg, #6B0F1A 0%, #8A1826 50%, #5A0B14 100%);
       border: 1.5px solid #C59B27;
       color: #FDF8F0;
       box-shadow:
-        inset 0 0 0 2px rgba(197, 155, 39, 0.35),
-        0 8px 20px -4px rgba(107, 15, 26, 0.45);
+      inset 0 0 0 2px rgba(197, 155, 39, 0.35),
+      0 8px 20px -4px rgba(107, 15, 26, 0.45);
       transition: all 0.3s ease;
     }
     .btn-royal:hover {
@@ -263,13 +263,13 @@
       border-color: #E2C265;
       transform: translateY(-2px);
       box-shadow:
-        inset 0 0 0 2px rgba(226, 194, 101, 0.6),
-        0 12px 26px -4px rgba(107, 15, 26, 0.55);
+      inset 0 0 0 2px rgba(226, 194, 101, 0.6),
+      0 12px 26px -4px rgba(107, 15, 26, 0.55);
     }
     .btn-royal:active {
       transform: translateY(0);
     }
-
+    
     /* Smooth scroll-reveal animation states */
     .reveal-section {
       opacity: 0;
@@ -280,7 +280,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-
+    
     /* Gentle pulse for sacred lotus glow */
     @keyframes gentleGlow {
       0%, 100% { filter: drop-shadow(0 0 4px rgba(197, 155, 39, 0.3)); }
@@ -293,759 +293,759 @@
 </head>
 
 <body class="antialiased selection:bg-maroon selection:text-gold-pale">
-
+  
   <!-- ========================================================================
-       OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
-       ======================================================================== -->
+  OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
+  ======================================================================== -->
   <section id="hero-cover" class="hero-curtain" aria-label="Sachin and Sahana Wedding Cover">
     <!-- Blurred ambient fill for wide screens -->
     <div class="hero-ambient-bg" aria-hidden="true"></div>
-
+    
     <!-- Crisp Portrait Photo (WebP primary + Progressive JPEG fallback) -->
     <div class="hero-photo-frame">
       <picture>
         <source srcset="SHR08429.webp" type="image/webp" />
         <img
-          src="SHR08429.jpg"
-          alt="Sachin and Sahana"
-          width="682"
-          height="1024"
-          fetchpriority="high"
-          decoding="sync"
+        src="SHR08429.jpg"
+        alt="Sachin and Sahana"
+        width="682"
+        height="1024"
+        fetchpriority="high"
+        decoding="sync"
         />
       </picture>
     </div>
-
+    
     <!-- Top & Bottom Dark Maroon Vignettes -->
     <div class="hero-scrim-top" aria-hidden="true"></div>
     <div class="hero-scrim-bottom" aria-hidden="true"></div>
-
+    
     <!-- Top Invocation Overlay -->
     <div class="absolute top-0 inset-x-0 z-10 pt-6 sm:pt-8 px-4 text-center pointer-events-none">
-      <p class="font-serif text-xs sm:text-sm md:text-base font-semibold tracking-[0.26em] uppercase text-gold-pale drop-shadow">
-        || Sri Ganeshaya Namah ||
+      <p class="font-serif text-sm sm:text-base md:text-lg font-semibold tracking-normal text-gold-pale drop-shadow">
+        || ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ||
       </p>
     </div>
-
+    
     <!-- Bottom Names, Date & Scroll-Up Prompt Overlay -->
     <div class="absolute bottom-0 inset-x-0 z-10 pb-12 sm:pb-14 px-4 text-center flex flex-col items-center">
       <span class="font-body uppercase tracking-[0.28em] text-[11px] sm:text-xs font-semibold text-gold-light mb-1.5 drop-shadow">
-        Shuba Vivaha
+        Shubha Vivaha
       </span>
-
+      
       <h1 class="font-decorative text-4xl sm:text-6xl md:text-7xl font-bold tracking-wide hero-gold-shimmer drop-shadow-[0_4px_18px_rgba(0,0,0,0.75)] leading-tight">
         Sachin <span class="font-serif italic font-normal text-3xl sm:text-5xl text-gold-pale">&amp;</span> Sahana
       </h1>
-
+      
       <div class="mt-3 sm:mt-4 px-5 py-1.5 sm:px-7 sm:py-2 rounded-full border border-gold/70 bg-maroon-deep/80 backdrop-blur-sm shadow-lg">
         <p class="font-serif text-base sm:text-xl font-semibold tracking-wide text-ivory">
           Sunday, February 07, 2027
         </p>
       </div>
-
+      
       <!-- Interactive Scroll-Up Cue -->
       <button
-        type="button"
-        id="open-invitation-btn"
-        aria-label="Scroll up to open wedding invitation"
-        class="mt-6 sm:mt-7 group inline-flex flex-col items-center gap-1 text-gold-pale hover:text-white focus:outline-none cursor-pointer"
+      type="button"
+      id="open-invitation-btn"
+      aria-label="Scroll up to open wedding invitation"
+      class="mt-6 sm:mt-7 group inline-flex flex-col items-center gap-1 text-gold-pale hover:text-white focus:outline-none cursor-pointer"
       >
-        <span class="scroll-up-cue inline-flex items-center justify-center w-9 h-9 rounded-full border border-gold/70 bg-maroon-deep/75 backdrop-blur-sm shadow-md group-hover:border-gold-light transition-colors">
-          <svg class="w-4 h-4 text-gold-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      <span class="scroll-up-cue inline-flex items-center justify-center w-9 h-9 rounded-full border border-gold/70 bg-maroon-deep/75 backdrop-blur-sm shadow-md group-hover:border-gold-light transition-colors">
+        <svg class="w-4 h-4 text-gold-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </span>
+      <span class="font-body uppercase tracking-[0.22em] text-[10px] sm:text-xs font-semibold text-gold-pale/95 drop-shadow">
+        Scroll up to open invitation
+      </span>
+    </button>
+  </div>
+</section>
+
+<!-- ========================================================================
+SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL UP)
+======================================================================== -->
+<div id="invitation-sheet" class="invitation-sheet-wrapper py-8 px-3 sm:py-12 sm:px-6 lg:px-8">
+  
+  <!-- Drag / Pull Handle Accent at Top of Invitation Sheet -->
+  <div class="flex justify-center mb-5" aria-hidden="true">
+    <div class="w-14 h-1.5 rounded-full bg-gold/60"></div>
+  </div>
+  
+  <!-- Main Invitation Card Container -->
+  <main class="max-w-4xl mx-auto silk-ivory-sheet rounded-2xl p-2 sm:p-4">
+    
+    <!-- Outer & Inner Double-Lined Golden Border Frame -->
+    <div class="double-gold-frame rounded-xl px-4 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14 relative overflow-hidden">
+      
+      <!-- ====================================================================
+      FOUR ORNATE GOLD CORNER MOTIFS (SVG)
+      ==================================================================== -->
+      <!-- Top-Left Corner Filigree -->
+      <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute top-2.5 left-2.5 pointer-events-none opacity-90" viewBox="0 0 100 100" fill="none">
+        <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
+        <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
+        <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
+      </svg>
+      
+      <!-- Top-Right Corner Filigree -->
+      <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute top-2.5 right-2.5 pointer-events-none opacity-90 transform scale-x-[-1]" viewBox="0 0 100 100" fill="none">
+        <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
+        <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
+        <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
+      </svg>
+      
+      <!-- Bottom-Left Corner Filigree -->
+      <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute bottom-2.5 left-2.5 pointer-events-none opacity-90 transform scale-y-[-1]" viewBox="0 0 100 100" fill="none">
+        <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
+        <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
+        <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
+      </svg>
+      
+      <!-- Bottom-Right Corner Filigree -->
+      <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute bottom-2.5 right-2.5 pointer-events-none opacity-90 transform scale-[-1]" viewBox="0 0 100 100" fill="none">
+        <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
+        <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
+        <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
+      </svg>
+      
+      <!-- ====================================================================
+      SECTION 1: INVITATION HEADER BANNER
+      ==================================================================== -->
+      <header class="text-center pt-2 pb-6 reveal-section">
+        <!-- Auspicious Temple Arch (Prabhavali) & Sacred Lotus Emblem -->
+        <div class="flex justify-center mb-4">
+          <svg class="w-48 h-28 sm:w-60 sm:h-32 lotus-glow" viewBox="0 0 260 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Traditional Temple Arch and Sacred Lotus Emblem">
+            <path d="M25 128 C25 65 72 26 130 14 C188 26 235 65 235 128" stroke="#C59B27" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M36 128 C36 72 78 36 130 25 C182 36 224 72 224 128" stroke="#6B0F1A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <path d="M130 4 L134 12 L126 12 Z" fill="#C59B27"/>
+            <circle cx="130" cy="15" r="4.5" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
+            <path d="M62 72 Q70 58 84 62 Q94 46 110 50 Q120 36 130 36 Q140 36 150 50 Q166 46 176 62 Q190 58 198 72" stroke="#C59B27" stroke-width="1.5" fill="none"/>
+            
+            <!-- Central Sacred Lotus Flower -->
+            <path d="M130 56 C121 72 121 90 130 104 C139 90 139 72 130 56 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
+            <path d="M130 104 C115 94 108 78 114 64 C122 74 126 88 130 104 Z" fill="#8A1826" stroke="#C59B27" stroke-width="1.3"/>
+            <path d="M130 104 C145 94 152 78 146 64 C138 74 134 88 130 104 Z" fill="#8A1826" stroke="#C59B27" stroke-width="1.3"/>
+            <path d="M130 104 C108 100 96 88 98 74 C110 80 120 90 130 104 Z" fill="#C59B27" fill-opacity="0.28" stroke="#C59B27" stroke-width="1.3"/>
+            <path d="M130 104 C152 100 164 88 162 74 C150 80 140 90 130 104 Z" fill="#C59B27" fill-opacity="0.28" stroke="#C59B27" stroke-width="1.3"/>
+            <path d="M98 112 Q130 105 162 112" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
+            <path d="M84 120 Q130 113 176 120" stroke="#6B0F1A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="52" cy="96" r="2.5" fill="#C59B27"/>
+            <circle cx="208" cy="96" r="2.5" fill="#C59B27"/>
+            <circle cx="130" cy="46" r="2" fill="#C59B27"/>
           </svg>
-        </span>
-        <span class="font-body uppercase tracking-[0.22em] text-[10px] sm:text-xs font-semibold text-gold-pale/95 drop-shadow">
-          Scroll up to open invitation
-        </span>
+        </div>
+        
+        <p class="font-serif text-base sm:text-lg md:text-xl font-semibold tracking-normal text-maroon mb-3">
+          || ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ||
+        </p>
+        
+        <h2 class="font-decorative text-3xl sm:text-5xl md:text-6xl font-bold tracking-wider gold-foil-text drop-shadow-sm mb-4">
+          Shubha Vivaha
+        </h2>
+        
+        <div class="my-5 sm:my-7 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5">
+          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
+            Sachin
+          </span>
+          
+          <span class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-gold bg-ivory-warm shadow-inner my-1 sm:my-0">
+            <span class="font-serif italic font-bold text-2xl sm:text-3xl text-gold-dark">&amp;</span>
+          </span>
+          
+          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
+            Sahana
+          </span>
+        </div>
+        
+        <div class="mt-5 inline-block">
+          <div class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-gold bg-ivory-warm/90 shadow-sm">
+            <p class="font-serif text-lg sm:text-xl md:text-2xl font-semibold text-maroon-deep">
+              Are getting married on <span class="text-maroon font-bold">Sunday, February 07, 2027</span>
+            </p>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Ornate Gold Lotus Divider -->
+      <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
+        <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
+          <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+          <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+          <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
+          <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
+          <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+        </svg>
+      </div>
+      
+      <!-- ====================================================================
+      SECTION 2: LIVE JAVASCRIPT COUNTDOWN TIMER
+      ==================================================================== -->
+      <section aria-labelledby="countdown-heading" class="py-4 text-center reveal-section">
+        <h2 id="countdown-heading" class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide mb-6">
+          Counting down to the auspicious Muhurtha
+        </h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 max-w-2xl mx-auto">
+          <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
+            <span id="cd-days" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
+              00
+            </span>
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+              Days
+            </span>
+          </div>
+          
+          <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
+            <span id="cd-hours" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
+              00
+            </span>
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+              Hours
+            </span>
+          </div>
+          
+          <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
+            <span id="cd-minutes" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
+              00
+            </span>
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+              Minutes
+            </span>
+          </div>
+          
+          <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
+            <span id="cd-seconds" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
+              00
+            </span>
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+              Seconds
+            </span>
+          </div>
+        </div>
+        
+        <p id="countdown-status" class="font-serif italic text-base sm:text-lg text-maroon-light mt-4">
+          Sunday, February 07, 2027 at 10:36 AM IST
+        </p>
+      </section>
+      
+      <!-- Ornate Gold Lotus Divider -->
+      <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
+        <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
+          <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+          <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+          <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
+          <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
+          <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+        </svg>
+      </div>
+      
+      <!-- ====================================================================
+      SECTION 3: CORDIALLY INVITED & WEDDING EVENTS
+      ==================================================================== -->
+      <section aria-labelledby="events-heading" class="py-4 reveal-section">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <!-- Candid Keepsake Medallion (Lazy-loaded WebP + JPEG fallback) -->
+          <div class="candid-keepsake mb-5 flex justify-center">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 border-2 border-gold bg-ivory-warm shadow-md">
+              <picture>
+                <source srcset="SHR08703.webp" type="image/webp" />
+                <img
+                src="SHR08703.jpg"
+                alt="Sachin and Sahana candid portrait"
+                width="360"
+                height="540"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover object-top rounded-full"
+                onerror="this.closest('.candid-keepsake').style.display='none'"
+                />
+              </picture>
+            </div>
+          </div>
+          
+          <h2 id="events-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon tracking-wide mb-3">
+            Cordially Invited
+          </h2>
+          <blockquote class="font-serif italic text-lg sm:text-xl text-maroon-deep leading-relaxed px-2">
+            &ldquo;Our sincere and humble invitation to you and your family members. Please join us with your loved ones to bless the newlywed couple on their auspicious day.&rdquo;
+          </blockquote>
+        </div>
+        
+        <!-- Two Side-by-Side Ornate Event & Venue Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          
+          <!-- Card 1: Shubha Muhurtha -->
+          <article class="ornate-card rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-between">
+            <div class="w-full">
+              <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-maroon/5 border border-gold/60 flex items-center justify-center">
+                <svg class="w-8 h-8 text-maroon" viewBox="0 0 48 48" fill="none">
+                  <path d="M16 18 C12 13 15 9 20 13 M32 18 C36 13 33 9 28 13" stroke="#6B0F1A" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="24" cy="14" r="5" fill="#C59B27" stroke="#6B0F1A" stroke-width="1.4"/>
+                  <path d="M17 19 H31 L29 23 C34 26 35 34 30 39 H18 C13 34 14 26 19 23 L17 19 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
+                  <path d="M16 41 H32" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              
+              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
+                Sacred Wedding Ceremony
+              </span>
+              <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
+                Shubha Muhurtha
+              </h3>
+              
+              <div class="py-3.5 border-y border-gold/40 space-y-1">
+                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
+                  Sunday, February 07, 2027
+                </p>
+                <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
+                  10:36 AM
+                </p>
+              </div>
+              
+              <div class="pt-4 pb-6">
+                <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
+                  Venue
+                </span>
+                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
+                  Bhatte Vinayaka Temple
+                </p>
+                <p class="font-body text-sm text-maroon-light mt-1">
+                  Kekkaru, Honnavara, Uttara Kannada
+                </p>
+              </div>
+            </div>
+            
+            <div class="w-full flex flex-col gap-2.5 pt-2">
+              <a
+              href="https://maps.app.goo.gl/8JXVXGQ88UJYDAbn8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-royal inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-serif text-base sm:text-lg font-semibold tracking-wide w-full"
+              >
+              <svg class="w-4 h-4 text-gold-light shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+              </svg>
+              <span>View on Google Maps</span>
+            </a>
+            
+            <button
+            type="button"
+            data-address="Bhatte Vinayaka Temple, Kekkaru, Honnavara, Uttara Kannada"
+            class="copy-venue-btn inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors w-full"
+            >
+            <svg class="w-3.5 h-3.5 text-gold-dark shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+            </svg>
+            <span>Copy Venue Address</span>
+          </button>
+        </div>
+      </article>
+      
+      <!-- Card 2: Arathakshathe (Reception) -->
+      <article class="ornate-card rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-between">
+        <div class="w-full">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-maroon/5 border border-gold/60 flex items-center justify-center">
+            <svg class="w-8 h-8 text-maroon" viewBox="0 0 48 48" fill="none">
+              <path d="M24 6 C20 12 20 17 24 21 C28 17 28 12 24 6 Z" fill="#C59B27" stroke="#6B0F1A" stroke-width="1.3"/>
+              <path d="M10 24 H38 C36 30 30 33 24 33 C18 33 12 30 10 24 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
+              <path d="M24 33 V40 M15 41 H33" stroke="#6B0F1A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          
+          <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
+            Wedding Reception
+          </span>
+          <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
+            Arathakshathe
+            <span class="block font-serif text-base sm:text-lg font-normal italic text-maroon-light mt-0.5">
+              (Reception)
+            </span>
+          </h3>
+          
+          <div class="py-3.5 border-y border-gold/40 space-y-1">
+            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
+              Monday, February 08, 2027
+            </p>
+            <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
+              Starting from 11:00 AM onwards
+            </p>
+          </div>
+          
+          <div class="pt-4 pb-6">
+            <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
+              Venue
+            </span>
+            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
+              Holanagadde
+            </p>
+            <p class="font-body text-sm text-maroon-light mt-1">
+              Kumta, Uttara Kannada
+            </p>
+          </div>
+        </div>
+        
+        <div class="w-full flex flex-col gap-2.5 pt-2">
+          <a
+          href="https://maps.app.goo.gl/Ew4c2pKYANk66mkg9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-royal inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-serif text-base sm:text-lg font-semibold tracking-wide w-full"
+          >
+          <svg class="w-4 h-4 text-gold-light shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+          </svg>
+          <span>View on Google Maps</span>
+        </a>
+        
+        <button
+        type="button"
+        data-address="Holanagadde, Kumta, Uttara Kannada"
+        class="copy-venue-btn inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors w-full"
+        >
+        <svg class="w-3.5 h-3.5 text-gold-dark shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+        </svg>
+        <span>Copy Venue Address</span>
       </button>
     </div>
-  </section>
+  </article>
+  
+</div>
+</section>
 
-  <!-- ========================================================================
-       SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL UP)
-       ======================================================================== -->
-  <div id="invitation-sheet" class="invitation-sheet-wrapper py-8 px-3 sm:py-12 sm:px-6 lg:px-8">
+<!-- Ornate Gold Lotus Divider -->
+<div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
+  <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
+    <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+    <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+    <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
+    <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
+    <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+    <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+    <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
+    <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+  </svg>
+</div>
 
-    <!-- Drag / Pull Handle Accent at Top of Invitation Sheet -->
-    <div class="flex justify-center mb-5" aria-hidden="true">
-      <div class="w-14 h-1.5 rounded-full bg-gold/60"></div>
-    </div>
-
-    <!-- Main Invitation Card Container -->
-    <main class="max-w-4xl mx-auto silk-ivory-sheet rounded-2xl p-2 sm:p-4">
-
-      <!-- Outer & Inner Double-Lined Golden Border Frame -->
-      <div class="double-gold-frame rounded-xl px-4 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14 relative overflow-hidden">
-
-        <!-- ====================================================================
-             FOUR ORNATE GOLD CORNER MOTIFS (SVG)
-             ==================================================================== -->
-        <!-- Top-Left Corner Filigree -->
-        <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute top-2.5 left-2.5 pointer-events-none opacity-90" viewBox="0 0 100 100" fill="none">
-          <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
-          <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
-          <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
-          <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
-        </svg>
-
-        <!-- Top-Right Corner Filigree -->
-        <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute top-2.5 right-2.5 pointer-events-none opacity-90 transform scale-x-[-1]" viewBox="0 0 100 100" fill="none">
-          <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
-          <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
-          <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
-          <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
-        </svg>
-
-        <!-- Bottom-Left Corner Filigree -->
-        <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute bottom-2.5 left-2.5 pointer-events-none opacity-90 transform scale-y-[-1]" viewBox="0 0 100 100" fill="none">
-          <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
-          <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
-          <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
-          <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
-        </svg>
-
-        <!-- Bottom-Right Corner Filigree -->
-        <svg class="w-14 h-14 sm:w-20 sm:h-20 text-gold absolute bottom-2.5 right-2.5 pointer-events-none opacity-90 transform scale-[-1]" viewBox="0 0 100 100" fill="none">
-          <path d="M4 4 H68 C48 4 36 16 36 32 C24 32 16 24 16 16 C16 28 24 36 32 36 C16 36 4 48 4 68 Z" fill="currentColor" fill-opacity="0.18"/>
-          <path d="M4 4 H75 M4 4 V75 M4 4 C32 4 42 18 42 34 C42 42 34 42 34 42 C18 42 4 32 4 4 Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 12 C28 12 34 22 34 34 C22 34 12 28 12 12 Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="46" cy="14" r="2.5" fill="currentColor"/>
-          <circle cx="14" cy="46" r="2.5" fill="currentColor"/>
-          <circle cx="24" cy="24" r="3" fill="#6B0F1A"/>
-        </svg>
-
-        <!-- ====================================================================
-             SECTION 1: INVITATION HEADER BANNER
-             ==================================================================== -->
-        <header class="text-center pt-2 pb-6 reveal-section">
-          <!-- Auspicious Temple Arch (Prabhavali) & Sacred Lotus Emblem -->
-          <div class="flex justify-center mb-4">
-            <svg class="w-48 h-28 sm:w-60 sm:h-32 lotus-glow" viewBox="0 0 260 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Traditional Temple Arch and Sacred Lotus Emblem">
-              <path d="M25 128 C25 65 72 26 130 14 C188 26 235 65 235 128" stroke="#C59B27" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M36 128 C36 72 78 36 130 25 C182 36 224 72 224 128" stroke="#6B0F1A" stroke-width="1.2" stroke-dasharray="4 3"/>
-              <path d="M130 4 L134 12 L126 12 Z" fill="#C59B27"/>
-              <circle cx="130" cy="15" r="4.5" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
-              <path d="M62 72 Q70 58 84 62 Q94 46 110 50 Q120 36 130 36 Q140 36 150 50 Q166 46 176 62 Q190 58 198 72" stroke="#C59B27" stroke-width="1.5" fill="none"/>
-
-              <!-- Central Sacred Lotus Flower -->
-              <path d="M130 56 C121 72 121 90 130 104 C139 90 139 72 130 56 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
-              <path d="M130 104 C115 94 108 78 114 64 C122 74 126 88 130 104 Z" fill="#8A1826" stroke="#C59B27" stroke-width="1.3"/>
-              <path d="M130 104 C145 94 152 78 146 64 C138 74 134 88 130 104 Z" fill="#8A1826" stroke="#C59B27" stroke-width="1.3"/>
-              <path d="M130 104 C108 100 96 88 98 74 C110 80 120 90 130 104 Z" fill="#C59B27" fill-opacity="0.28" stroke="#C59B27" stroke-width="1.3"/>
-              <path d="M130 104 C152 100 164 88 162 74 C150 80 140 90 130 104 Z" fill="#C59B27" fill-opacity="0.28" stroke="#C59B27" stroke-width="1.3"/>
-              <path d="M98 112 Q130 105 162 112" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-              <path d="M84 120 Q130 113 176 120" stroke="#6B0F1A" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="52" cy="96" r="2.5" fill="#C59B27"/>
-              <circle cx="208" cy="96" r="2.5" fill="#C59B27"/>
-              <circle cx="130" cy="46" r="2" fill="#C59B27"/>
-            </svg>
-          </div>
-
-          <p class="font-serif text-sm sm:text-base md:text-lg font-semibold tracking-[0.22em] uppercase text-maroon mb-3">
-            || Sri Ganeshaya Namah ||
-          </p>
-
-          <h2 class="font-decorative text-3xl sm:text-5xl md:text-6xl font-bold tracking-wider gold-foil-text drop-shadow-sm mb-4">
-            Shuba Vivaha
-          </h2>
-
-          <div class="my-5 sm:my-7 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5">
-            <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
-              Sachin
-            </span>
-
-            <span class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-gold bg-ivory-warm shadow-inner my-1 sm:my-0">
-              <span class="font-serif italic font-bold text-2xl sm:text-3xl text-gold-dark">&amp;</span>
-            </span>
-
-            <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
-              Sahana
-            </span>
-          </div>
-
-          <div class="mt-5 inline-block">
-            <div class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-gold bg-ivory-warm/90 shadow-sm">
-              <p class="font-serif text-lg sm:text-xl md:text-2xl font-semibold text-maroon-deep">
-                Are getting married on <span class="text-maroon font-bold">Sunday, February 07, 2027</span>
-              </p>
-            </div>
-          </div>
-        </header>
-
-        <!-- Ornate Gold Lotus Divider -->
-        <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
-          <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
-            <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
-            <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
-            <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+<!-- ====================================================================
+SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
+==================================================================== -->
+<section aria-labelledby="compliments-heading" class="py-4 reveal-section">
+  <div class="text-center mb-8">
+    <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1">
+      Warmest Regards
+    </span>
+    <h2 id="compliments-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon">
+      With Best Compliments From
+    </h2>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+    
+    <!-- Groom's Parents Card -->
+    <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
+      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
+        Groom&rsquo;s Parents
+      </span>
+      
+      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
+        Srimati Ganga &amp;<br />Sri Mahabaleshwar Hegde
+      </h3>
+      
+      <p class="font-body text-sm text-maroon-light mb-4">
+        Holanagadde, Kumta Taluk
+      </p>
+      
+      <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
+        <a href="tel:9482212083" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+          <svg class="w-4 h-4 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
-        </div>
-
-        <!-- ====================================================================
-             SECTION 2: LIVE JAVASCRIPT COUNTDOWN TIMER
-             ==================================================================== -->
-        <section aria-labelledby="countdown-heading" class="py-4 text-center reveal-section">
-          <h2 id="countdown-heading" class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide mb-6">
-            Counting down to the auspicious Muhurtha
-          </h2>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 max-w-2xl mx-auto">
-            <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
-              <span id="cd-days" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
-                00
-              </span>
-              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
-                Days
-              </span>
-            </div>
-
-            <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
-              <span id="cd-hours" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
-                00
-              </span>
-              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
-                Hours
-              </span>
-            </div>
-
-            <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
-              <span id="cd-minutes" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
-                00
-              </span>
-              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
-                Minutes
-              </span>
-            </div>
-
-            <div class="countdown-box rounded-xl py-4 px-3 sm:py-5 sm:px-4 flex flex-col items-center justify-center">
-              <span id="cd-seconds" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
-                00
-              </span>
-              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
-                Seconds
-              </span>
-            </div>
-          </div>
-
-          <p id="countdown-status" class="font-serif italic text-base sm:text-lg text-maroon-light mt-4">
-            Sunday, February 07, 2027 at 10:36 AM IST
-          </p>
-        </section>
-
-        <!-- Ornate Gold Lotus Divider -->
-        <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
-          <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
-            <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
-            <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
-            <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
-          </svg>
-        </div>
-
-        <!-- ====================================================================
-             SECTION 3: CORDIALLY INVITED & WEDDING EVENTS
-             ==================================================================== -->
-        <section aria-labelledby="events-heading" class="py-4 reveal-section">
-          <div class="text-center max-w-2xl mx-auto mb-8">
-            <!-- Candid Keepsake Medallion (Lazy-loaded WebP + JPEG fallback) -->
-            <div class="candid-keepsake mb-5 flex justify-center">
-              <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 border-2 border-gold bg-ivory-warm shadow-md">
-                <picture>
-                  <source srcset="SHR08703.webp" type="image/webp" />
-                  <img
-                    src="SHR08703.jpg"
-                    alt="Sachin and Sahana candid portrait"
-                    width="360"
-                    height="540"
-                    loading="lazy"
-                    decoding="async"
-                    class="w-full h-full object-cover object-top rounded-full"
-                    onerror="this.closest('.candid-keepsake').style.display='none'"
-                  />
-                </picture>
-              </div>
-            </div>
-
-            <h2 id="events-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon tracking-wide mb-3">
-              Cordially Invited
-            </h2>
-            <blockquote class="font-serif italic text-lg sm:text-xl text-maroon-deep leading-relaxed px-2">
-              &ldquo;Our sincere and humble invitation to you and your family members. Please join us with your loved ones to bless the newlywed couple on their auspicious day.&rdquo;
-            </blockquote>
-          </div>
-
-          <!-- Two Side-by-Side Ornate Event & Venue Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-
-            <!-- Card 1: Shuba Muhurtha -->
-            <article class="ornate-card rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-between">
-              <div class="w-full">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-maroon/5 border border-gold/60 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-maroon" viewBox="0 0 48 48" fill="none">
-                    <path d="M16 18 C12 13 15 9 20 13 M32 18 C36 13 33 9 28 13" stroke="#6B0F1A" stroke-width="1.5" stroke-linecap="round"/>
-                    <circle cx="24" cy="14" r="5" fill="#C59B27" stroke="#6B0F1A" stroke-width="1.4"/>
-                    <path d="M17 19 H31 L29 23 C34 26 35 34 30 39 H18 C13 34 14 26 19 23 L17 19 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
-                    <path d="M16 41 H32" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </div>
-
-                <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
-                  Sacred Wedding Ceremony
-                </span>
-                <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
-                  Shuba Muhurtha
-                </h3>
-
-                <div class="py-3.5 border-y border-gold/40 space-y-1">
-                  <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
-                    Sunday, February 07, 2027
-                  </p>
-                  <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
-                    10:36 AM
-                  </p>
-                </div>
-
-                <div class="pt-4 pb-6">
-                  <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
-                    Venue
-                  </span>
-                  <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
-                    Bhatte Vinayaka Temple
-                  </p>
-                  <p class="font-body text-sm text-maroon-light mt-1">
-                    Kekkaru, Honnavara, Uttara Kannada
-                  </p>
-                </div>
-              </div>
-
-              <div class="w-full flex flex-col gap-2.5 pt-2">
-                <a
-                  href="https://maps.app.goo.gl/8JXVXGQ88UJYDAbn8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-royal inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-serif text-base sm:text-lg font-semibold tracking-wide w-full"
-                >
-                  <svg class="w-4 h-4 text-gold-light shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
-                    <circle cx="12" cy="10" r="2.5" fill="currentColor" />
-                  </svg>
-                  <span>View on Google Maps</span>
-                </a>
-
-                <button
-                  type="button"
-                  data-address="Bhatte Vinayaka Temple, Kekkaru, Honnavara, Uttara Kannada"
-                  class="copy-venue-btn inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors w-full"
-                >
-                  <svg class="w-3.5 h-3.5 text-gold-dark shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
-                  </svg>
-                  <span>Copy Venue Address</span>
-                </button>
-              </div>
-            </article>
-
-            <!-- Card 2: Arathakshathe (Reception) -->
-            <article class="ornate-card rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-between">
-              <div class="w-full">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-maroon/5 border border-gold/60 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-maroon" viewBox="0 0 48 48" fill="none">
-                    <path d="M24 6 C20 12 20 17 24 21 C28 17 28 12 24 6 Z" fill="#C59B27" stroke="#6B0F1A" stroke-width="1.3"/>
-                    <path d="M10 24 H38 C36 30 30 33 24 33 C18 33 12 30 10 24 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.5"/>
-                    <path d="M24 33 V40 M15 41 H33" stroke="#6B0F1A" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </div>
-
-                <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
-                  Wedding Reception
-                </span>
-                <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
-                  Arathakshathe
-                  <span class="block font-serif text-base sm:text-lg font-normal italic text-maroon-light mt-0.5">
-                    (Reception)
-                  </span>
-                </h3>
-
-                <div class="py-3.5 border-y border-gold/40 space-y-1">
-                  <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
-                    Monday, February 08, 2027
-                  </p>
-                  <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
-                    Starting from 11:00 AM onwards
-                  </p>
-                </div>
-
-                <div class="pt-4 pb-6">
-                  <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
-                    Venue
-                  </span>
-                  <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
-                    Holanagadde
-                  </p>
-                  <p class="font-body text-sm text-maroon-light mt-1">
-                    Kumta, Uttara Kannada
-                  </p>
-                </div>
-              </div>
-
-              <div class="w-full flex flex-col gap-2.5 pt-2">
-                <a
-                  href="https://maps.app.goo.gl/Ew4c2pKYANk66mkg9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-royal inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-serif text-base sm:text-lg font-semibold tracking-wide w-full"
-                >
-                  <svg class="w-4 h-4 text-gold-light shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
-                    <circle cx="12" cy="10" r="2.5" fill="currentColor" />
-                  </svg>
-                  <span>View on Google Maps</span>
-                </a>
-
-                <button
-                  type="button"
-                  data-address="Holanagadde, Kumta, Uttara Kannada"
-                  class="copy-venue-btn inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors w-full"
-                >
-                  <svg class="w-3.5 h-3.5 text-gold-dark shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
-                  </svg>
-                  <span>Copy Venue Address</span>
-                </button>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-        <!-- Ornate Gold Lotus Divider -->
-        <div class="my-6 sm:my-8 flex items-center justify-center reveal-section" aria-hidden="true">
-          <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
-            <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-            <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
-            <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
-            <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
-            <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
-          </svg>
-        </div>
-
-        <!-- ====================================================================
-             SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
-             ==================================================================== -->
-        <section aria-labelledby="compliments-heading" class="py-4 reveal-section">
-          <div class="text-center mb-8">
-            <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1">
-              Warmest Regards
-            </span>
-            <h2 id="compliments-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon">
-              With Best Compliments From
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-
-            <!-- Groom's Parents Card -->
-            <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
-              <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
-                Groom&rsquo;s Parents
-              </span>
-
-              <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
-                Srimati Ganga &amp;<br />Sri Mahabaleshwar Hegde
-              </h3>
-
-              <p class="font-body text-sm text-maroon-light mb-4">
-                Holanagadde, Kumta Taluk
-              </p>
-
-              <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
-                <a href="tel:9482212083" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
-                  <svg class="w-4 h-4 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                  <span>9482212083</span>
-                </a>
-                <span class="text-gold">|</span>
-                <a href="tel:9986831407" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
-                  <span>9986831407</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Bride's Parents Card -->
-            <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
-              <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
-                Bride&rsquo;s Parents
-              </span>
-
-              <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
-                Srimati Bharathi &amp;<br />Sri Shridhar Bhat
-              </h3>
-
-              <p class="font-body text-sm text-maroon-light mb-4">
-                Heblekeri, Kadatoka Village, Honnavara Taluk
-              </p>
-
-              <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
-                <a href="tel:9901880395" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
-                  <svg class="w-4 h-4 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                  <span>9901880395</span>
-                </a>
-                <span class="text-gold">|</span>
-                <a href="tel:7022658456" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
-                  <span>7022658456</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 5: FOOTER WITH TRADITIONAL LOTUS DIVIDER
-             ==================================================================== -->
-        <footer class="mt-10 pt-6 text-center reveal-section">
-          <div class="mb-6 flex items-center justify-center" aria-hidden="true">
-            <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
-              <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-              <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
-              <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
-              <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
-              <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-              <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
-              <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
-              <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
-            </svg>
-          </div>
-
-          <p class="font-decorative text-lg sm:text-xl md:text-2xl font-bold text-maroon tracking-wide mb-2">
-            Sachin ❤️ Sahana | February 07 &amp; 08, 2027
-          </p>
-
-          <p class="font-serif italic text-lg sm:text-xl text-maroon-light max-w-lg mx-auto">
-            Your presence and blessings are our greatest gift
-          </p>
-
-          <p class="font-serif text-xs tracking-[0.25em] uppercase text-maroon/75 mt-4">
-            || Shubhamasthu ||
-          </p>
-
-          <div class="mt-6">
-            <a
-              href="#hero-cover"
-              class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors"
-            >
-              <svg class="w-3.5 h-3.5 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-              </svg>
-              <span>Back to Cover Photo</span>
-            </a>
-          </div>
-        </footer>
-
+          <span>9482212083</span>
+        </a>
+        <span class="text-gold">|</span>
+        <a href="tel:9986831407" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+          <span>9986831407</span>
+        </a>
       </div>
-    </main>
+    </div>
+    
+    <!-- Bride's Parents Card -->
+    <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
+      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
+        Bride&rsquo;s Parents
+      </span>
+      
+      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
+        Srimati Bharathi &amp;<br />Sri Shridhar Bhat
+      </h3>
+      
+      <p class="font-body text-sm text-maroon-light mb-4">
+        Heblekeri, Kadatoka Village, Honnavara Taluk
+      </p>
+      
+      <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
+        <a href="tel:9901880395" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+          <svg class="w-4 h-4 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          <span>8762325090</span>
+        </a>
+        <span class="text-gold">|</span>
+        <a href="tel:7022658456" class="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors">
+          <span>7090112105</span>
+        </a>
+      </div>
+    </div>
+    
   </div>
+</section>
 
-  <!-- Non-blocking Toast Notification -->
-  <div
-    id="toast-message"
-    role="status"
-    aria-live="polite"
-    class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-maroon-deep text-gold-pale border border-gold shadow-xl font-body text-sm opacity-0 pointer-events-none transition-opacity duration-300"
-  >
-    Address copied!
+<!-- ====================================================================
+SECTION 5: FOOTER WITH TRADITIONAL LOTUS DIVIDER
+==================================================================== -->
+<footer class="mt-10 pt-6 text-center reveal-section">
+  <div class="mb-6 flex items-center justify-center" aria-hidden="true">
+    <svg class="w-full max-w-md h-9 text-gold" viewBox="0 0 400 36" fill="none">
+      <line x1="10" y1="18" x2="152" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="248" y1="18" x2="390" y2="18" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+      <circle cx="156" cy="18" r="2.5" fill="#6B0F1A"/>
+      <circle cx="244" cy="18" r="2.5" fill="#6B0F1A"/>
+      <path d="M200 5 C195 13 195 22 200 29 C205 22 205 13 200 5 Z" fill="#6B0F1A" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M200 29 C190 24 186 15 190 9 C195 14 198 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M200 29 C210 24 214 15 210 9 C205 14 202 21 200 29 Z" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M174 18 Q182 12 188 18 Q182 24 174 18 Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M226 18 Q218 12 212 18 Q218 24 226 18 Z" stroke="currentColor" stroke-width="1.1"/>
+    </svg>
   </div>
+  
+  <p class="font-decorative text-lg sm:text-xl md:text-2xl font-bold text-maroon tracking-wide mb-2">
+    Sachin ❤️ Sahana | February 07 &amp; 08, 2027
+  </p>
+  
+  <p class="font-serif italic text-lg sm:text-xl text-maroon-light max-w-lg mx-auto">
+    Your presence and blessings are our greatest gift
+  </p>
+  
+  <p class="font-serif text-xs tracking-[0.25em] uppercase text-maroon/75 mt-4">
+    || Shubhamasthu ||
+  </p>
+  
+  <div class="mt-6">
+    <a
+    href="#hero-cover"
+    class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gold/60 bg-ivory-warm/80 hover:bg-gold/15 text-maroon font-body text-xs font-medium transition-colors"
+    >
+    <svg class="w-3.5 h-3.5 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+    <span>Back to Cover Photo</span>
+  </a>
+</div>
+</footer>
 
-  <!-- ==========================================================================
-       INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
-       ========================================================================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      /* ----------------------------------------------------------------------
-         1. Smooth Scroll-Up Curtain Transition & Tap-to-Open Trigger
-         ---------------------------------------------------------------------- */
-      const heroCover = document.getElementById('hero-cover');
-      const invitationSheet = document.getElementById('invitation-sheet');
-      const openBtn = document.getElementById('open-invitation-btn');
+</div>
+</main>
+</div>
 
-      if (openBtn && invitationSheet) {
-        openBtn.addEventListener('click', () => {
-          invitationSheet.scrollIntoView({ behavior: 'smooth' });
-        });
+<!-- Non-blocking Toast Notification -->
+<div
+id="toast-message"
+role="status"
+aria-live="polite"
+class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-maroon-deep text-gold-pale border border-gold shadow-xl font-body text-sm opacity-0 pointer-events-none transition-opacity duration-300"
+>
+Address copied!
+</div>
+
+<!-- ==========================================================================
+INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
+========================================================================== -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ----------------------------------------------------------------------
+    1. Smooth Scroll-Up Curtain Transition & Tap-to-Open Trigger
+    ---------------------------------------------------------------------- */
+    const heroCover = document.getElementById('hero-cover');
+    const invitationSheet = document.getElementById('invitation-sheet');
+    const openBtn = document.getElementById('open-invitation-btn');
+    
+    if (openBtn && invitationSheet) {
+      openBtn.addEventListener('click', () => {
+        invitationSheet.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    
+    let ticking = false;
+    function updateHeroParallax() {
+      if (!heroCover) return;
+      const scrollY = window.scrollY || window.pageYOffset;
+      const vh = window.innerHeight || 1;
+      const progress = Math.min(Math.max(scrollY / vh, 0), 1);
+      
+      // Gently scale down and fade the photo curtain as the invitation slides up over it
+      const scale = 1 - progress * 0.05;
+      const opacity = 1 - progress * 0.55;
+      heroCover.style.transform = `scale(${scale.toFixed(4)})`;
+      heroCover.style.opacity = opacity.toFixed(4);
+      ticking = false;
+    }
+    
+    window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeroParallax);
+        ticking = true;
       }
-
-      let ticking = false;
-      function updateHeroParallax() {
-        if (!heroCover) return;
-        const scrollY = window.scrollY || window.pageYOffset;
-        const vh = window.innerHeight || 1;
-        const progress = Math.min(Math.max(scrollY / vh, 0), 1);
-
-        // Gently scale down and fade the photo curtain as the invitation slides up over it
-        const scale = 1 - progress * 0.05;
-        const opacity = 1 - progress * 0.55;
-        heroCover.style.transform = `scale(${scale.toFixed(4)})`;
-        heroCover.style.opacity = opacity.toFixed(4);
-        ticking = false;
-      }
-
-      window.addEventListener(
-        'scroll',
-        () => {
-          if (!ticking) {
-            window.requestAnimationFrame(updateHeroParallax);
-            ticking = true;
+    },
+    { passive: true }
+    );
+    
+    /* ----------------------------------------------------------------------
+    2. Live Countdown Timer to Sunday, February 07, 2027 at 10:36 AM IST
+    ---------------------------------------------------------------------- */
+    const targetDate = new Date('2027-02-07T10:36:00+05:30').getTime();
+    
+    const daysEl = document.getElementById('cd-days');
+    const hoursEl = document.getElementById('cd-hours');
+    const minutesEl = document.getElementById('cd-minutes');
+    const secondsEl = document.getElementById('cd-seconds');
+    const statusEl = document.getElementById('countdown-status');
+    
+    function padZero(num) {
+      return String(Math.max(0, num)).padStart(2, '0');
+    }
+    
+    function updateCountdown() {
+      try {
+        const now = Date.now();
+        const distance = targetDate - now;
+        
+        if (distance <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          if (statusEl) {
+            statusEl.textContent = 'The auspicious Shubha Muhurtha has arrived! Shubhamasthu.';
           }
-        },
-        { passive: true }
-      );
-
-      /* ----------------------------------------------------------------------
-         2. Live Countdown Timer to Sunday, February 07, 2027 at 10:36 AM IST
-         ---------------------------------------------------------------------- */
-      const targetDate = new Date('2027-02-07T10:36:00+05:30').getTime();
-
-      const daysEl = document.getElementById('cd-days');
-      const hoursEl = document.getElementById('cd-hours');
-      const minutesEl = document.getElementById('cd-minutes');
-      const secondsEl = document.getElementById('cd-seconds');
-      const statusEl = document.getElementById('countdown-status');
-
-      function padZero(num) {
-        return String(Math.max(0, num)).padStart(2, '0');
-      }
-
-      function updateCountdown() {
-        try {
-          const now = Date.now();
-          const distance = targetDate - now;
-
-          if (distance <= 0) {
-            daysEl.textContent = '00';
-            hoursEl.textContent = '00';
-            minutesEl.textContent = '00';
-            secondsEl.textContent = '00';
-            if (statusEl) {
-              statusEl.textContent = 'The auspicious Shuba Muhurtha has arrived! Shubhamasthu.';
-            }
-            return;
-          }
-
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          daysEl.textContent = padZero(days);
-          hoursEl.textContent = padZero(hours);
-          minutesEl.textContent = padZero(minutes);
-          secondsEl.textContent = padZero(seconds);
-        } catch (err) {
-          console.error('Countdown update error:', err);
+          return;
         }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        daysEl.textContent = padZero(days);
+        hoursEl.textContent = padZero(hours);
+        minutesEl.textContent = padZero(minutes);
+        secondsEl.textContent = padZero(seconds);
+      } catch (err) {
+        console.error('Countdown update error:', err);
       }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-
-      /* ----------------------------------------------------------------------
-         3. Smooth Scroll-Reveal Animations via IntersectionObserver
-         ---------------------------------------------------------------------- */
-      const revealSections = document.querySelectorAll('.reveal-section');
-
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(
-          (entries, obs) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                obs.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-
-        revealSections.forEach((section) => observer.observe(section));
-      } else {
-        revealSections.forEach((section) => section.classList.add('is-visible'));
-      }
-
-      /* ----------------------------------------------------------------------
-         4. Copy Venue Address Helper with Toast Feedback
-         ---------------------------------------------------------------------- */
-      const copyButtons = document.querySelectorAll('.copy-venue-btn');
-      const toastEl = document.getElementById('toast-message');
-      let toastTimeout;
-
-      function showToast(message) {
-        if (!toastEl) return;
-        toastEl.textContent = message;
-        toastEl.classList.remove('opacity-0');
-        toastEl.classList.add('opacity-100');
-
-        clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-          toastEl.classList.remove('opacity-100');
-          toastEl.classList.add('opacity-0');
-        }, 2800);
-      }
-
-      copyButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const fullText = btn.getAttribute('data-address') || '';
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(fullText).then(
-              () => showToast('Address copied!'),
-              () => showToast('Unable to copy address automatically.')
-            );
-          } else {
-            try {
-              const tempInput = document.createElement('textarea');
-              tempInput.value = fullText;
-              tempInput.setAttribute('readonly', '');
-              tempInput.style.position = 'absolute';
-              tempInput.style.left = '-9999px';
-              document.body.appendChild(tempInput);
-              tempInput.select();
-              document.execCommand('copy');
-              document.body.removeChild(tempInput);
-              showToast('Address copied!');
-            } catch (err) {
-              showToast('Unable to copy address automatically.');
-            }
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    /* ----------------------------------------------------------------------
+    3. Smooth Scroll-Reveal Animations via IntersectionObserver
+    ---------------------------------------------------------------------- */
+    const revealSections = document.querySelectorAll('.reveal-section');
+    
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
           }
         });
+      },
+      { threshold: 0.1 }
+      );
+      
+      revealSections.forEach((section) => observer.observe(section));
+    } else {
+      revealSections.forEach((section) => section.classList.add('is-visible'));
+    }
+    
+    /* ----------------------------------------------------------------------
+    4. Copy Venue Address Helper with Toast Feedback
+    ---------------------------------------------------------------------- */
+    const copyButtons = document.querySelectorAll('.copy-venue-btn');
+    const toastEl = document.getElementById('toast-message');
+    let toastTimeout;
+    
+    function showToast(message) {
+      if (!toastEl) return;
+      toastEl.textContent = message;
+      toastEl.classList.remove('opacity-0');
+      toastEl.classList.add('opacity-100');
+      
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.remove('opacity-100');
+        toastEl.classList.add('opacity-0');
+      }, 2800);
+    }
+    
+    copyButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const fullText = btn.getAttribute('data-address') || '';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(fullText).then(
+          () => showToast('Address copied!'),
+          () => showToast('Unable to copy address automatically.')
+          );
+        } else {
+          try {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = fullText;
+            tempInput.setAttribute('readonly', '');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Address copied!');
+          } catch (err) {
+            showToast('Unable to copy address automatically.');
+          }
+        }
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
