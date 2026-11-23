@@ -289,6 +289,61 @@
     .lotus-glow {
       animation: gentleGlow 4s ease-in-out infinite;
     }
+    /* ==========================================================================
+       3. FLOATING HINDU TEMPLE VENUE BUTTON (BOTTOM-RIGHT STICKY FAB)
+       ========================================================================== */
+    @keyframes templeHalo {
+      0%, 100% {
+        box-shadow:
+          inset 0 0 0 1.5px rgba(226, 194, 101, 0.45),
+          0 10px 26px -4px rgba(34, 4, 9, 0.7),
+          0 0 0 0 rgba(197, 155, 39, 0.45);
+      }
+      50% {
+        box-shadow:
+          inset 0 0 0 1.5px rgba(226, 194, 101, 0.75),
+          0 14px 30px -4px rgba(34, 4, 9, 0.8),
+          0 0 0 8px rgba(197, 155, 39, 0);
+      }
+    }
+
+    @keyframes sanctumShimmer {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.06); }
+    }
+
+    .floating-temple-btn {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1rem;
+      z-index: 45;
+      background: linear-gradient(135deg, #4A0810 0%, #6B0F1A 50%, #3E060D 100%);
+      border: 1.5px solid #E2C265;
+      color: #FDF8F0;
+      animation: templeHalo 3.2s ease-in-out infinite;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+    }
+
+    @media (min-width: 640px) {
+      .floating-temple-btn {
+        bottom: 1.75rem;
+        right: 1.75rem;
+      }
+    }
+
+    .floating-temple-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: #FFF3C4;
+    }
+
+    .floating-temple-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .temple-sanctum-glow {
+      transform-origin: center;
+      animation: sanctumShimmer 2.6s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -883,6 +938,50 @@ class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-m
 >
 Address copied!
 </div>
+<!-- Floating Bottom-Right Hindu Temple Wedding Venue Map Button -->
+  <a
+    href="https://maps.app.goo.gl/8JXVXGQ88UJYDAbn8"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Bhatte Vinayaka Temple wedding venue location on Google Maps"
+    title="Bhatte Vinayaka Temple, Kekkaru — Open in Google Maps"
+    class="floating-temple-btn group inline-flex items-center gap-2.5 pl-2.5 pr-4 py-2 sm:pl-3 sm:pr-5 sm:py-2.5 rounded-full backdrop-blur-md"
+  >
+    <!-- Ornate Gold Medallion with Animated South Indian Hindu Temple Gopuram SVG -->
+    <span class="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-maroon-deep border border-gold/80 shadow-inner shrink-0">
+      <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle class="temple-sanctum-glow" cx="32" cy="14" r="9" fill="#E2C265" fill-opacity="0.22" />
+        <path d="M32 4 L34.2 9.5 H29.8 L32 4 Z" fill="#FFF3C4" />
+        <circle cx="32" cy="11.5" r="2.3" fill="#E2C265" stroke="#4A0810" stroke-width="0.8" />
+        <path d="M23 19 L26 14 H38 L41 19 H23 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
+        <path d="M19 26 L22 20 H42 L45 26 H19 Z" fill="#E2C265" stroke="#6B0F1A" stroke-width="1" stroke-linejoin="round" />
+        <circle cx="26" cy="23" r="1" fill="#6B0F1A" />
+        <circle cx="32" cy="23" r="1" fill="#6B0F1A" />
+        <circle cx="38" cy="23" r="1" fill="#6B0F1A" />
+        <path d="M15 33 L18 27 H46 L49 33 H15 Z" fill="#C59B27" stroke="#FFF3C4" stroke-width="1" stroke-linejoin="round" />
+        <rect x="17" y="33" width="30" height="19" rx="1" fill="#FDF8F0" stroke="#C59B27" stroke-width="1.2" />
+        <rect x="19.5" y="34" width="3" height="17" fill="#C59B27" />
+        <rect x="41.5" y="34" width="3" height="17" fill="#C59B27" />
+        <path class="temple-sanctum-glow" d="M27 51 V41 C27 38.2 29.2 36 32 36 C34.8 36 37 38.2 37 41 V51 H27 Z" fill="#6B0F1A" stroke="#C59B27" stroke-width="1.2" />
+        <path class="temple-sanctum-glow" d="M32 41.5 C30.5 44 30.5 46 32 47.5 C33.5 46 33.5 44 32 41.5 Z" fill="#FFF3C4" />
+        <rect x="13" y="52" width="38" height="3.5" rx="1" fill="#E2C265" />
+        <rect x="10" y="55.5" width="44" height="3.5" rx="1.2" fill="#C59B27" />
+      </svg>
+    </span>
+
+    <!-- Venue Text Label -->
+    <span class="flex flex-col text-left leading-tight">
+      <span class="font-body uppercase tracking-[0.16em] text-[9px] sm:text-[10px] font-semibold text-gold-light flex items-center gap-1">
+        <span>Wedding Venue</span>
+        <svg class="w-2.5 h-2.5 text-gold-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+        </svg>
+      </span>
+      <span class="font-serif text-sm sm:text-base font-bold text-ivory tracking-wide">
+        Temple Map
+      </span>
+    </span>
+  </a>
 
 <!-- ==========================================================================
 INTERACTIVE JAVASCRIPT: CURTAIN PARALLAX, COUNTDOWN, SCROLL REVEAL & COPY
