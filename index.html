@@ -53,9 +53,9 @@
             },
           },
           fontFamily: {
-            decorative: ['"Cinzel Decorative"', 'serif'],
+            decorative: ['"Cinzel Decorative"', '"Noto Serif Kannada"', 'serif'],
             serif: ['"Cormorant Garamond"', '"Noto Serif Kannada"', 'Georgia', 'serif'],
-            body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', '"Noto Serif Kannada"', 'system-ui', 'sans-serif'],
           },
         },
       },
@@ -67,6 +67,21 @@
 </head>
 
 <body class="envelope-locked antialiased selection:bg-maroon selection:text-gold-pale">
+
+  <!-- Fixed Top-Right Language Switcher Button (English <-> Kannada) -->
+  <button
+    type="button"
+    id="lang-toggle-btn"
+    class="lang-toggle-btn"
+    aria-label="ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ (Translate to Kannada)"
+    title="Switch between English and ಕನ್ನಡ"
+  >
+    <svg class="w-4 h-4 text-gold-light shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+    <span id="lang-toggle-label">ಕನ್ನಡ</span>
+  </button>
   
   <!-- ========================================================================
   0. ROYAL MAROON & ANTIQUE GOLD 3D ENVELOPE OPENING CURTAIN
@@ -160,7 +175,7 @@
       class="envelope-seal-assembly focus:outline-none"
       aria-label="Tap to open wedding invitation envelope"
       >
-      <span class="envelope-tap-label">💖 Tap to Open 💖</span>
+      <span class="envelope-tap-label" data-i18n="tapToOpen">💖 Tap to Open 💖</span>
       
       <span class="wax-seal-medallion">
         <svg class="w-16 h-16 sm:w-20 sm:h-20" viewBox="0 0 80 80" fill="none" aria-hidden="true">
@@ -182,7 +197,7 @@
     
     <!-- Warm Invitation Message on Envelope -->
     <div class="envelope-bottom-copy">
-      <p class="font-serif italic text-lg sm:text-xl md:text-2xl text-gold-pale leading-snug max-w-sm mx-auto drop-shadow">
+      <p class="font-serif italic text-lg sm:text-xl md:text-2xl text-gold-pale leading-snug max-w-sm mx-auto drop-shadow" data-i18n-html="envelopeMessage">
         ✨ A Promise of Forever ✨<br />
         Two souls, one sacred vow,<br />
         and a lifetime of togetherness.<br />
@@ -222,10 +237,10 @@ OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
           <path d="M21 48 Q32 44 43 48" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         </svg>
       </div>
-      <p class="font-serif italic text-xl sm:text-2xl text-gold-pale tracking-wide mt-3">
+      <p class="font-serif italic text-xl sm:text-2xl text-gold-pale tracking-wide mt-3" data-i18n="loaderTitle">
         The couple is getting ready&hellip;
       </p>
-      <span class="font-body uppercase tracking-[0.22em] text-[10px] text-gold-light/85 mt-1.5">
+      <span class="font-body uppercase tracking-[0.22em] text-[10px] text-gold-light/85 mt-1.5" data-i18n="loaderSubtitle">
         Crafting our special moment
       </span>
     </div>
@@ -245,7 +260,7 @@ OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
   <div class="hero-scrim-bottom" aria-hidden="true"></div>
   
   <!-- Top Invocation Overlay -->
-  <div class="absolute top-0 inset-x-0 z-10 pt-6 sm:pt-8 px-4 text-center pointer-events-none">
+  <div class="absolute top-0 inset-x-0 z-10 pt-14 sm:pt-8 px-4 text-center pointer-events-none">
     <p class="font-serif text-sm sm:text-base md:text-lg font-semibold tracking-normal text-gold-pale drop-shadow">
       || ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ||
     </p>
@@ -256,13 +271,13 @@ OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
     <!-- Delicate Gold Accent Divider -->
     <div class="flex items-center justify-center gap-2.5 mb-2.5" aria-hidden="true">
       <span class="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-gold-light"></span>
-      <span class="font-body uppercase tracking-[0.26em] text-[10px] sm:text-xs font-semibold text-gold-light drop-shadow">
+      <span class="font-body uppercase tracking-[0.26em] text-[10px] sm:text-xs font-semibold text-gold-light drop-shadow" data-i18n="heroEyebrow">
         Two Hearts &middot; One Beautiful Journey
       </span>
       <span class="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-gold-light"></span>
     </div>
     
-    <h1 class="font-serif italic text-2xl sm:text-3xl md:text-4xl font-semibold text-ivory max-w-md sm:max-w-xl mx-auto leading-snug drop-shadow-[0_3px_16px_rgba(0,0,0,0.85)]">
+    <h1 class="font-serif italic text-2xl sm:text-3xl md:text-4xl font-semibold text-ivory max-w-md sm:max-w-xl mx-auto leading-snug drop-shadow-[0_3px_16px_rgba(0,0,0,0.85)]" data-i18n="heroQuote">
       &ldquo;With the blessings of God and the love of our families, we are stepping into a new chapter in our lives. Your presence will make our celebration even more special.&rdquo;
     </h1>
     
@@ -273,7 +288,7 @@ OPENING FULL-SCREEN PHOTO CURTAIN (PHOTO + NAMES + DATE)
     aria-label="Scroll down to view wedding invitation"
     class="mt-6 sm:mt-7 group inline-flex flex-col items-center gap-1.5 text-gold-pale hover:text-white focus:outline-none cursor-pointer"
     >
-    <span class="font-body uppercase tracking-[0.22em] text-[10px] sm:text-xs font-semibold text-gold-pale/95 drop-shadow">
+    <span class="font-body uppercase tracking-[0.22em] text-[10px] sm:text-xs font-semibold text-gold-pale/95 drop-shadow" data-i18n="scrollCue">
       Scroll down to view invitation
     </span>
     <span class="scroll-down-cue inline-flex items-center justify-center w-9 h-9 rounded-full border border-gold/70 bg-maroon-deep/75 backdrop-blur-sm shadow-md group-hover:border-gold-light transition-colors">
@@ -375,12 +390,12 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
           || ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ||
         </p>
         
-        <h2 class="font-decorative text-3xl sm:text-5xl md:text-6xl font-bold tracking-wider gold-foil-text drop-shadow-sm mb-4">
+        <h2 class="font-decorative text-3xl sm:text-5xl md:text-6xl font-bold tracking-wider gold-foil-text drop-shadow-sm mb-4" data-i18n="shubhaVivaha">
           Shubha Vivaha
         </h2>
         
         <div class="my-5 sm:my-7 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5">
-          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
+          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm" data-i18n="groomName">
             Sachin
           </span>
           
@@ -388,14 +403,14 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <span class="font-serif italic font-bold text-2xl sm:text-3xl text-gold-dark">&amp;</span>
           </span>
           
-          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm">
+          <span class="font-decorative text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-maroon drop-shadow-sm" data-i18n="brideName">
             Sahana
           </span>
         </div>
         
         <div class="mt-5 inline-block">
           <div class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-gold bg-ivory-warm/90 shadow-sm">
-            <p class="font-serif text-lg sm:text-xl md:text-2xl font-semibold text-maroon-deep">
+            <p class="font-serif text-lg sm:text-xl md:text-2xl font-semibold text-maroon-deep" data-i18n-html="gettingMarriedOn">
               Are getting married on <span class="text-maroon font-bold">Sunday, February 07, 2027</span>
             </p>
           </div>
@@ -421,7 +436,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
       SECTION 2: LIVE JAVASCRIPT COUNTDOWN TIMER
       ================================================================== -->
       <section aria-labelledby="countdown-heading" class="py-4 text-center reveal-section">
-        <h2 id="countdown-heading" class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide mb-6">
+        <h2 id="countdown-heading" class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide mb-6" data-i18n="countdownHeading">
           Counting down to the auspicious Muhurtha
         </h2>
         
@@ -430,7 +445,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <span id="cd-days" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
               00
             </span>
-            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2" data-i18n="cdDaysLabel">
               Days
             </span>
           </div>
@@ -439,7 +454,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <span id="cd-hours" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
               00
             </span>
-            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2" data-i18n="cdHoursLabel">
               Hours
             </span>
           </div>
@@ -448,7 +463,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <span id="cd-minutes" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
               00
             </span>
-            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2" data-i18n="cdMinutesLabel">
               Minutes
             </span>
           </div>
@@ -457,7 +472,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <span id="cd-seconds" class="font-decorative text-3xl sm:text-4xl md:text-5xl font-bold text-maroon tracking-wider">
               00
             </span>
-            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2">
+            <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark mt-2" data-i18n="cdSecondsLabel">
               Seconds
             </span>
           </div>
@@ -499,7 +514,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
                     <path d="M32 43 C23 38 19 29 23 21 C28 27 30 35 32 43 Z" stroke="currentColor" stroke-width="1.4" />
                     <path d="M32 43 C41 38 45 29 41 21 C36 27 34 35 32 43 Z" stroke="currentColor" stroke-width="1.4" />
                   </svg>
-                  <span class="font-serif italic text-[11px] text-gold-pale mt-1 leading-tight px-2">
+                  <span class="font-serif italic text-[11px] text-gold-pale mt-1 leading-tight px-2" data-i18n="candidLoader">
                     Getting ready&hellip;
                   </span>
                 </div>
@@ -516,10 +531,10 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             </div>
           </div>
           
-          <h2 id="events-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon tracking-wide mb-3">
+          <h2 id="events-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon tracking-wide mb-3" data-i18n="cordiallyInvited">
             Cordially Invited
           </h2>
-          <blockquote class="font-serif italic text-lg sm:text-xl text-maroon-deep leading-relaxed px-2">
+          <blockquote class="font-serif italic text-lg sm:text-xl text-maroon-deep leading-relaxed px-2" data-i18n="inviteQuote">
             &ldquo;Our sincere and humble invitation to you and your family members. Please join us with your loved ones to bless the newlywed couple on their auspicious day.&rdquo;
           </blockquote>
         </div>
@@ -539,30 +554,30 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
                 </svg>
               </div>
               
-              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
+              <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1" data-i18n="sacredCeremony">
                 Sacred Wedding Ceremony
               </span>
-              <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
+              <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4" data-i18n="shubhaMuhurtha">
                 Shubha Muhurtha
               </h3>
               
               <div class="py-3.5 border-y border-gold/40 space-y-1">
-                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
+                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep" data-i18n="muhurthaDate">
                   Sunday, February 07, 2027
                 </p>
-                <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
+                <p class="font-body text-sm sm:text-base font-semibold text-gold-dark" data-i18n="muhurthaTime">
                   10:36 AM
                 </p>
               </div>
               
               <div class="pt-4 pb-6">
-                <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
+                <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1" data-i18n="venueLabel">
                   Venue
                 </span>
-                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
+                <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug" data-i18n="muhurthaVenueName">
                   Bhatte Vinayaka Temple
                 </p>
-                <p class="font-body text-sm text-maroon-light mt-1">
+                <p class="font-body text-sm text-maroon-light mt-1" data-i18n="muhurthaVenueAddr">
                   Kekkaru, Honnavara, Uttara Kannada
                 </p>
               </div>
@@ -579,7 +594,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
                 <circle cx="12" cy="10" r="2.5" fill="currentColor" />
               </svg>
-              <span>View on Google Maps</span>
+              <span data-i18n="viewOnMaps">View on Google Maps</span>
             </a>
             
             <button
@@ -591,7 +606,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
             </svg>
-            <span>Copy Venue Address</span>
+            <span data-i18n="copyAddress">Copy Venue Address</span>
           </button>
         </div>
       </article>
@@ -607,33 +622,30 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             </svg>
           </div>
           
-          <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1">
+          <span class="font-body uppercase tracking-[0.18em] text-xs font-semibold text-gold-dark block mb-1" data-i18n="weddingReception">
             Wedding Reception
           </span>
-          <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4">
+          <h3 class="font-decorative text-xl sm:text-2xl font-bold text-maroon mb-4" data-i18n-html="arathakshatheTitle">
             Arathakshathe
-            <span class="block font-serif text-base sm:text-lg font-normal italic text-maroon-light mt-0.5">
-              (Reception)
-            </span>
           </h3>
           
           <div class="py-3.5 border-y border-gold/40 space-y-1">
-            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep">
+            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep" data-i18n="receptionDate">
               Monday, February 08, 2027
             </p>
-            <p class="font-body text-sm sm:text-base font-semibold text-gold-dark">
+            <p class="font-body text-sm sm:text-base font-semibold text-gold-dark" data-i18n="receptionTime">
               Starting from 11:00 AM onwards
             </p>
           </div>
           
           <div class="pt-4 pb-6">
-            <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1">
+            <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-dark block mb-1" data-i18n="venueLabel">
               Venue
             </span>
-            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug">
+            <p class="font-serif text-lg sm:text-xl font-bold text-maroon-deep leading-snug" data-i18n="receptionVenueName">
               Holanagadde
             </p>
-            <p class="font-body text-sm text-maroon-light mt-1">
+            <p class="font-body text-sm text-maroon-light mt-1" data-i18n="receptionVenueAddr">
               Kumta, Uttara Kannada
             </p>
           </div>
@@ -650,7 +662,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z" />
             <circle cx="12" cy="10" r="2.5" fill="currentColor" />
           </svg>
-          <span>View on Google Maps</span>
+          <span data-i18n="viewOnMaps">View on Google Maps</span>
         </a>
         
         <button
@@ -662,7 +674,7 @@ SLIDING INVITATION CARD SECTION (REVEALED AS YOU SCROLL DOWN)
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
           <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
         </svg>
-        <span>Copy Venue Address</span>
+        <span data-i18n="copyAddress">Copy Venue Address</span>
       </button>
     </div>
   </article>
@@ -690,10 +702,10 @@ SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
 ================================================================== -->
 <section aria-labelledby="compliments-heading" class="py-4 reveal-section">
   <div class="text-center mb-8">
-    <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1">
+    <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1" data-i18n="warmestRegards">
       Warmest Regards
     </span>
-    <h2 id="compliments-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon">
+    <h2 id="compliments-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon" data-i18n="bestCompliments">
       With Best Compliments From
     </h2>
   </div>
@@ -702,15 +714,15 @@ SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
     
     <!-- Groom's Parents Card -->
     <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
-      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
+      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4" data-i18n="groomsParents">
         Groom&rsquo;s Parents
       </span>
       
-      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
+      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2" data-i18n-html="groomsParentsNames">
         Srimati Ganga &amp;<br />Sri Mahabaleshwar Hegde
       </h3>
       
-      <p class="font-body text-sm text-maroon-light mb-4">
+      <p class="font-body text-sm text-maroon-light mb-4" data-i18n="groomsParentsPlace">
         Holanagadde, Kumta Taluk
       </p>
       
@@ -730,16 +742,16 @@ SECTION 4: WITH BEST COMPLIMENTS FROM (GROOM'S & BRIDE'S PARENTS)
     
     <!-- Bride's Parents Card -->
     <div class="ornate-card rounded-2xl p-6 sm:p-8 text-center">
-      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4">
+      <span class="inline-block px-4 py-1 rounded-full bg-maroon text-gold-pale font-body text-xs font-medium uppercase tracking-[0.16em] mb-4" data-i18n="bridesParents">
         Bride&rsquo;s Parents
       </span>
       
-      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2">
+      <h3 class="font-serif text-xl sm:text-2xl font-bold text-maroon-deep leading-snug mb-2" data-i18n-html="bridesParentsNames">
         Srimati Bharathi &amp;<br />Sri Shridhar Bhat
       </h3>
       
-      <p class="font-body text-sm text-maroon-light mb-4">
-        Heblekeri, Kadatoka Village, Honnavara Taluk
+      <p class="font-body text-sm text-maroon-light mb-4" data-i18n="bridesParentsPlace">
+        Heblekeri, Kadatoka, Honnavara Taluk
       </p>
       
       <div class="pt-3 border-t border-gold/40 flex flex-wrap items-center justify-center gap-3 text-sm font-body font-medium text-maroon">
@@ -779,13 +791,13 @@ SECTION 5: GUESTBOOK & WEDDING WISHES
 ================================================================== -->
 <section id="guestbook-section" aria-labelledby="guestbook-heading" class="py-4 reveal-section">
   <div class="text-center mb-7">
-    <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1">
+    <span class="font-body uppercase tracking-[0.2em] text-xs font-semibold text-gold-dark block mb-1" data-i18n="blessingsWishes">
       Blessings &amp; Wishes
     </span>
-    <h2 id="guestbook-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon">
+    <h2 id="guestbook-heading" class="font-decorative text-2xl sm:text-3xl font-bold text-maroon" data-i18n="guestbookHeading">
       Guestbook
     </h2>
-    <p class="font-serif italic text-base sm:text-lg text-maroon-light mt-1">
+    <p class="font-serif italic text-base sm:text-lg text-maroon-light mt-1" data-i18n="guestbookSubtitle">
       Leave a heartfelt blessing or note for Sachin &amp; Sahana
     </p>
   </div>
@@ -801,6 +813,7 @@ SECTION 5: GUESTBOOK & WEDDING WISHES
         id="guest-name"
         name="guestName"
         placeholder="Enter your name*"
+        data-i18n-placeholder="guestNamePlaceholder"
         maxlength="60"
         required
         class="guestbook-input w-full rounded-lg px-4 py-3 font-body text-sm sm:text-base"
@@ -814,6 +827,7 @@ SECTION 5: GUESTBOOK & WEDDING WISHES
         name="guestWish"
         rows="4"
         placeholder="Enter your wishes*"
+        data-i18n-placeholder="guestWishPlaceholder"
         maxlength="400"
         required
         class="guestbook-input w-full rounded-lg px-4 py-3 font-body text-sm sm:text-base resize-y"
@@ -840,7 +854,7 @@ SECTION 5: GUESTBOOK & WEDDING WISHES
       id="send-wishes-btn"
       class="guestbook-submit-btn px-6 sm:px-8 py-3 rounded-lg font-decorative text-xs sm:text-sm font-bold tracking-[0.14em] uppercase"
       >
-      Send Wishes
+      <span data-i18n="sendWishes">Send Wishes</span>
     </button>
   </div>
 </form>
@@ -848,7 +862,7 @@ SECTION 5: GUESTBOOK & WEDDING WISHES
 <!-- Submitted Guest Wishes Wall -->
 <div class="mt-7 pt-6 border-t border-gold/30">
   <div class="flex items-center justify-between mb-3.5">
-    <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-light">
+    <span class="font-body uppercase tracking-[0.16em] text-[11px] font-semibold text-gold-light" data-i18n="warmBlessingsHeader">
       Warm Blessings from Loved Ones
     </span>
     <span id="wishes-count" class="font-body text-xs text-gold-pale/80">
@@ -882,19 +896,19 @@ SECTION 6: FOOTER WITH TRADITIONAL LOTUS DIVIDER
   </div>
   
   <div class="mb-3 space-y-1">
-    <p class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide">
+    <p class="font-decorative text-xl sm:text-2xl md:text-3xl font-bold text-maroon tracking-wide" data-i18n="footerCouple">
       Sachin ❤️ Sahana
     </p>
-    <p class="font-decorative text-sm sm:text-base md:text-lg font-bold text-gold-dark tracking-[0.14em]">
+    <p class="font-decorative text-sm sm:text-base md:text-lg font-bold text-gold-dark tracking-[0.14em]" data-i18n="footerDates">
       February 07 &amp; 08, 2027
     </p>
   </div>
   
-  <p class="font-serif italic text-lg sm:text-xl text-maroon-light max-w-lg mx-auto">
+  <p class="font-serif italic text-lg sm:text-xl text-maroon-light max-w-lg mx-auto" data-i18n="footerGift">
     Your presence and blessings are our greatest gift
   </p>
   
-  <p class="font-serif text-xs tracking-[0.25em] uppercase text-maroon/75 mt-4">
+  <p class="font-serif text-xs tracking-[0.25em] uppercase text-maroon/75 mt-4" data-i18n="shubhamasthu">
     || Shubhamasthu ||
   </p>
   
@@ -906,7 +920,7 @@ SECTION 6: FOOTER WITH TRADITIONAL LOTUS DIVIDER
     <svg class="w-3.5 h-3.5 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
     </svg>
-    <span>Back to Cover Photo</span>
+    <span data-i18n="backToCover">Back to Cover Photo</span>
   </a>
 </div>
 </footer>
@@ -970,12 +984,12 @@ class="floating-temple-btn group inline-flex items-center rounded-full backdrop-
 <!-- Venue Text Label (Shown at top, collapses to icon-only on scroll) -->
 <span class="temple-label-wrap flex flex-col text-left leading-tight">
   <span class="font-body uppercase tracking-[0.16em] text-[9px] sm:text-[10px] font-semibold text-gold-light flex items-center gap-1">
-    <span>Wedding Venue</span>
+    <span data-i18n="weddingVenue">Wedding Venue</span>
     <svg class="w-2.5 h-2.5 text-gold-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
     </svg>
   </span>
-  <span class="font-serif text-sm sm:text-base font-bold text-ivory tracking-wide">
+  <span class="font-serif text-sm sm:text-base font-bold text-ivory tracking-wide" data-i18n="templeMap">
     Temple Map
   </span>
 </span>

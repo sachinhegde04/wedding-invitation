@@ -9,6 +9,168 @@ SHUBHA VIVAHA — SACHIN & SAHANA WEDDING INVITATION INTERACTIVITY
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
+     0A. Bilingual Language Toggle (English <-> Kannada)
+     ------------------------------------------------------------------------ */
+  const TRANSLATIONS = {
+    en: {
+      pageTitle: 'Shubha Vivaha | Sachin & Sahana',
+      toggleBtnText: 'ಕನ್ನಡ',
+      toggleBtnAria: 'ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ (Translate to Kannada)',
+      langSwitchedToast: 'Language switched to English',
+      tapToOpen: '💖 Tap to Open 💖',
+      envelopeMessage:
+        '✨ A Promise of Forever ✨<br />Two souls, one sacred vow,<br />and a lifetime of togetherness.<br />Join us as we begin our new chapter',
+      loaderTitle: 'The couple is getting ready…',
+      loaderSubtitle: 'Crafting our special moment',
+      heroEyebrow: 'Two Hearts · One Beautiful Journey',
+      heroQuote:
+        '“With the blessings of God and the love of our families, we are stepping into a new chapter in our lives. Your presence will make our celebration even more special.”',
+      scrollCue: 'Scroll down to view invitation',
+      shubhaVivaha: 'Shubha Vivaha',
+      groomName: 'Sachin',
+      brideName: 'Sahana',
+      gettingMarriedOn:
+        'Are getting married on <span class="text-maroon font-bold">Sunday, February 07, 2027</span>',
+      countdownHeading: 'Counting down to the auspicious Muhurtha',
+      cdDaysLabel: 'Days',
+      cdHoursLabel: 'Hours',
+      cdMinutesLabel: 'Minutes',
+      cdSecondsLabel: 'Seconds',
+      countdownUpcoming: 'Sunday, February 07, 2027 at 10:36 AM IST',
+      countdownArrived: 'The auspicious Shubha Muhurtha has arrived! Shubhamasthu.',
+      candidLoader: 'Getting ready…',
+      cordiallyInvited: 'Cordially Invited',
+      inviteQuote:
+        '“Our sincere and humble invitation to you and your family members. Please join us with your loved ones to bless the newlywed couple on their auspicious day.”',
+      sacredCeremony: 'Sacred Wedding Ceremony',
+      shubhaMuhurtha: 'Shubha Muhurtha',
+      muhurthaDate: 'Sunday, February 07, 2027',
+      muhurthaTime: '10:36 AM',
+      venueLabel: 'Venue',
+      muhurthaVenueName: 'Bhatte Vinayaka Temple',
+      muhurthaVenueAddr: 'Kekkaru, Honnavara, Uttara Kannada',
+      weddingReception: 'Wedding Reception',
+      arathakshatheTitle:
+        'Arathakshathe',
+      receptionDate: 'Monday, February 08, 2027',
+      receptionTime: 'Starting from 11:00 AM onwards',
+      receptionVenueName: 'Holanagadde',
+      receptionVenueAddr: 'Kumta, Uttara Kannada',
+      viewOnMaps: 'View on Google Maps',
+      copyAddress: 'Copy Venue Address',
+      addressCopiedToast: 'Address copied!',
+      addressCopyFailedToast: 'Unable to copy address automatically.',
+      warmestRegards: 'Warmest Regards',
+      bestCompliments: 'With Best Compliments From',
+      groomsParents: 'Groom’s Parents',
+      groomsParentsNames: 'Srimati Ganga &amp;<br />Sri Mahabaleshwar Hegde',
+      groomsParentsPlace: 'Holanagadde, Kumta Taluk',
+      bridesParents: 'Bride’s Parents',
+      bridesParentsNames: 'Srimati Bharathi &amp;<br />Sri Shridhar Bhat',
+      bridesParentsPlace: 'Heblekeri, Kadatoka, Honnavara Taluk',
+      blessingsWishes: 'Blessings & Wishes',
+      guestbookHeading: 'Guestbook',
+      guestbookSubtitle: 'Leave a heartfelt blessing or note for Sachin & Sahana',
+      guestNamePlaceholder: 'Enter your name*',
+      guestWishPlaceholder: 'Enter your wishes*',
+      inspireBtnTitle: 'Auto-fill a sample wedding blessing',
+      sendWishes: 'Send Wishes',
+      warmBlessingsHeader: 'Warm Blessings from Loved Ones',
+      wishSingular: 'Wish',
+      wishPlural: 'Wishes',
+      wishValidationToast: 'Please enter both your name and wedding wishes.',
+      wishSubmittedToast: 'Thank you! Your wishes have been added.',
+      footerCouple: 'Sachin ❤️ Sahana',
+      footerDates: 'February 07 & 08, 2027',
+      footerGift: 'Your presence and blessings are our greatest gift',
+      shubhamasthu: '|| Shubhamasthu ||',
+      backToCover: 'Back to Cover Photo',
+      weddingVenue: 'Wedding Venue',
+      templeMap: 'Temple Map',
+    },
+    kn: {
+      pageTitle: 'ಶುಭ ವಿವಾಹ | ಸಚಿನ್ ಮತ್ತು ಸಹನಾ',
+      toggleBtnText: 'English',
+      toggleBtnAria: 'Translate to English (ಇಂಗ್ಲಿಷ್‌ಗೆ ಬದಲಾಯಿಸಿ)',
+      langSwitchedToast: 'ಭಾಷೆಯನ್ನು ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಲಾಗಿದೆ',
+      tapToOpen: '💖 ತೆರೆಯಲು ಸ್ಪರ್ಶಿಸಿ 💖',
+      envelopeMessage:
+        '✨ ಶಾಶ್ವತ ಪ್ರೇಮದ ಭರವಸೆ ✨<br />ಎರಡು ಮನಸ್ಸುಗಳು, ಒಂದು ಪವಿತ್ರ ಸಂಕಲ್ಪ,<br />ಮತ್ತು ಜೀವನಪರ್ಯಂತದ ಜೊತೆಗಾರಿಕೆ.<br />ನಮ್ಮ ಹೊಸ ಜೀವನದ ಪಯಣದಲ್ಲಿ ನೀವೂ ಪಾಲ್ಗೊಳ್ಳಿ',
+      loaderTitle: 'ನವದಂಪತಿಗಳು ಸಿದ್ಧರಾಗುತ್ತಿದ್ದಾರೆ…',
+      loaderSubtitle: 'ನಮ್ಮ ವಿಶೇಷ ಕ್ಷಣವನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ',
+      heroEyebrow: 'ಎರಡು ಹೃದಯಗಳು · ಒಂದು ಸುಂದರ ಪಯಣ',
+      heroQuote:
+        '“ದೇವರ ಅನುಗ್ರಹ ಮತ್ತು ನಮ್ಮ ಕುಟುಂಬಗಳ ಪ್ರೀತಿ-ಆಶೀರ್ವಾದಗಳೊಂದಿಗೆ, ನಾವು ನಮ್ಮ ಜೀವನದ ಹೊಸ ಅಧ್ಯಾಯಕ್ಕೆ ಕಾಲಿಡುತ್ತಿದ್ದೇವೆ. ನಿಮ್ಮ ಉಪಸ್ಥಿತಿಯು ನಮ್ಮ ಸಂಭ್ರಮವನ್ನು ಇನ್ನಷ್ಟು ವಿಶೇಷವಾಗಿಸಲಿದೆ.”',
+      scrollCue: 'ಆಮಂತ್ರಣ ಪತ್ರಿಕೆ ನೋಡಲು ಕೆಳಗೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಿ',
+      shubhaVivaha: 'ಶುಭ ವಿವಾಹ',
+      groomName: 'ಸಚಿನ್',
+      brideName: 'ಸಹನಾ',
+      gettingMarriedOn:
+        '<span class="text-maroon font-bold">ಭಾನುವಾರ, ಫೆಬ್ರವರಿ 07, 2027</span> ರಂದು ವಿವಾಹವಾಗುತ್ತಿದ್ದಾರೆ',
+      countdownHeading: 'ಶುಭ ಮುಹೂರ್ತದ ಕ್ಷಣಗಣನೆ',
+      cdDaysLabel: 'ದಿನಗಳು',
+      cdHoursLabel: 'ಗಂಟೆಗಳು',
+      cdMinutesLabel: 'ನಿಮಿಷಗಳು',
+      cdSecondsLabel: 'ಸೆಕೆಂಡುಗಳು',
+      countdownUpcoming: 'ಭಾನುವಾರ, ಫೆಬ್ರವರಿ 07, 2027 · ಬೆಳಿಗ್ಗೆ 10:36 ಕ್ಕೆ',
+      countdownArrived: 'ಶುಭ ಮುಹೂರ್ತದ ಶುಭ ಘಳಿಗೆ ಬಂದಿದೆ! ಶುಭಮಸ್ತು.',
+      candidLoader: 'ಸಿದ್ಧರಾಗುತ್ತಿದ್ದಾರೆ…',
+      cordiallyInvited: 'ಆತ್ಮೀಯ ಆಮಂತ್ರಣ',
+      inviteQuote:
+        '“ತಮಗೂ ಹಾಗೂ ತಮ್ಮ ಕುಟುಂಬದವರಿಗೂ ನಮ್ಮ ಹೃತ್ಪೂರ್ವಕ ಮತ್ತು ವಿನಮ್ರ ಆಮಂತ್ರಣ. ಈ ಶುಭ ದಿನದಂದು ತಮ್ಮ ಬಂಧು-ಮಿತ್ರರೊಂದಿಗೆ ಆಗಮಿಸಿ ನವದಂಪತಿಗಳಿಗೆ ಶುಭ ಹಾರೈಸಿ ಆಶೀರ್ವದಿಸಬೇಕೆಂದು ಕೋರುತ್ತೇವೆ.”',
+      sacredCeremony: 'ಪವಿತ್ರ ವಿವಾಹ ಮಹೋತ್ಸವ',
+      shubhaMuhurtha: 'ಶುಭ ಮುಹೂರ್ತ',
+      muhurthaDate: 'ಭಾನುವಾರ, ಫೆಬ್ರವರಿ 07, 2027',
+      muhurthaTime: 'ಬೆಳಿಗ್ಗೆ 10:36 ಕ್ಕೆ',
+      venueLabel: 'ಸ್ಥಳ',
+      muhurthaVenueName: 'ಬಟ್ಟೆ ವಿನಾಯಕ ದೇವಸ್ಥಾನ',
+      muhurthaVenueAddr: 'ಕೆಕ್ಕಾರು, ಹೊನ್ನಾವರ, ಉತ್ತರ ಕನ್ನಡ',
+      weddingReception: 'ವಿವಾಹ ಆರತಕ್ಷತೆ',
+      arathakshatheTitle:
+        'ಆರತಕ್ಷತೆ',
+      receptionDate: 'ಸೋಮವಾರ, ಫೆಬ್ರವರಿ 08, 2027',
+      receptionTime: 'ಬೆಳಿಗ್ಗೆ 11:00 ಗಂಟೆಯಿಂದ',
+      receptionVenueName: 'ಹೊಲನಗದ್ದೆ',
+      receptionVenueAddr: 'ಕುಮಟಾ, ಉತ್ತರ ಕನ್ನಡ',
+      viewOnMaps: 'ಗೂಗಲ್ ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ',
+      copyAddress: 'ಸ್ಥಳದ ವಿಳಾಸ ಕಾಪಿ ಮಾಡಿ',
+      addressCopiedToast: 'ವಿಳಾಸ ಕಾಪಿ ಮಾಡಲಾಗಿದೆ!',
+      addressCopyFailedToast: 'ವಿಳಾಸವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕಾಪಿ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.',
+      warmestRegards: 'ಹೃತ್ಪೂರ್ವಕ ಶುಭಾಶಯಗಳೊಂದಿಗೆ',
+      bestCompliments: 'ತಮ್ಮ ಆಗಮನವನ್ನು ಬಯಸುವವರು',
+      groomsParents: 'ವರನ ತಂದೆ-ತಾಯಿ',
+      groomsParentsNames: 'ಶ್ರೀಮತಿ ಗಂಗಾ ಮತ್ತು<br />ಶ್ರೀ ಮಹಾಬಲೇಶ್ವರ ಹೆಗಡೆ',
+      groomsParentsPlace: 'ಹೊಲನಗದ್ದೆ, ಕುಮಟಾ ತಾಲ್ಲೂಕು',
+      bridesParents: 'ವಧುವಿನ ತಂದೆ-ತಾಯಿ',
+      bridesParentsNames: 'ಶ್ರೀಮತಿ ಭಾರತಿ ಮತ್ತು<br />ಶ್ರೀ ಶ್ರೀಧರ ಭಟ್',
+      bridesParentsPlace: 'ಹೆಬ್ಳೇಕೇರಿ, ಕಡತೋಕ, ಹೊನ್ನಾವರ ತಾಲ್ಲೂಕು',
+      blessingsWishes: 'ಆಶೀರ್ವಾದ ಮತ್ತು ಶುಭಾಶಯಗಳು',
+      guestbookHeading: 'ಶುಭಾಶಯ ಪುಸ್ತಕ',
+      guestbookSubtitle: 'ಸಚಿನ್ ಮತ್ತು ಸಹನಾ ಅವರಿಗೆ ನಿಮ್ಮ ಹೃದಯಸ್ಪರ್ಶಿ ಆಶೀರ್ವಾದ ಅಥವಾ ಶುಭಾಶಯಗಳನ್ನು ಬರೆಯಿರಿ',
+      guestNamePlaceholder: 'ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ*',
+      guestWishPlaceholder: 'ನಿಮ್ಮ ಶುಭಾಶಯಗಳನ್ನು ಬರೆಯಿರಿ*',
+      inspireBtnTitle: 'ಮಾದರಿ ವಿವಾಹ ಶುಭಾಶಯವನ್ನು ಭರ್ತಿ ಮಾಡಿ',
+      sendWishes: 'ಶುಭಾಶಯ ಕಳುಹಿಸಿ',
+      warmBlessingsHeader: 'ಪ್ರೀತಿಪಾತ್ರರ ಶುಭ ಆಶೀರ್ವಾದಗಳು',
+      wishSingular: 'ಶುಭಾಶಯ',
+      wishPlural: 'ಶುಭಾಶಯಗಳು',
+      wishValidationToast: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಶುಭಾಶಯಗಳನ್ನು ನಮೂದಿಸಿ.',
+      wishSubmittedToast: 'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಶುಭಾಶಯಗಳನ್ನು ಸೇರಿಸಲಾಗಿದೆ.',
+      footerCouple: 'ಸಚಿನ್ ❤️ ಸಹನಾ',
+      footerDates: 'ಫೆಬ್ರವರಿ 07 ಮತ್ತು 08, 2027',
+      footerGift: 'ನಿಮ್ಮ ಉಪಸ್ಥಿತಿ ಮತ್ತು ಆಶೀರ್ವಾದಗಳೇ ನಮಗೆ ಅತ್ಯಮೂಲ್ಯ ಉಡುಗೊರೆ',
+      shubhamasthu: '|| ಶುಭಮಸ್ತು ||',
+      backToCover: 'ಮುಖಪುಟದ ಚಿತ್ರಕ್ಕೆ ಹಿಂತಿರುಗಿ',
+      weddingVenue: 'ವಿವಾಹ ಸ್ಥಳ',
+      templeMap: 'ದೇವಸ್ಥಾನದ ನಕ್ಷೆ',
+    },
+  };
+
+  let currentLang = 'en';
+  const langToggleBtn = document.getElementById('lang-toggle-btn');
+  const langToggleLabel = document.getElementById('lang-toggle-label');
+
+  /* ------------------------------------------------------------------------
   0. Original Cover Photo Smooth Reveal & Catchy Loading State
   ------------------------------------------------------------------------ */
   const heroCoupleImg = document.getElementById('hero-couple-img');
@@ -183,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
         minutesEl.textContent = '00';
         secondsEl.textContent = '00';
         if (statusEl) {
-          statusEl.textContent = 'The auspicious Shubha Muhurtha has arrived! Shubhamasthu.';
+          statusEl.textContent = TRANSLATIONS[currentLang].countdownArrived;
         }
         return;
       }
@@ -197,6 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
       hoursEl.textContent = padZero(hours);
       minutesEl.textContent = padZero(minutes);
       secondsEl.textContent = padZero(seconds);
+      if (statusEl) {
+        statusEl.textContent = TRANSLATIONS[currentLang].countdownUpcoming;
+      }
     } catch (err) {
       console.error('Countdown update error:', err);
     }
@@ -253,8 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const fullText = btn.getAttribute('data-address') || '';
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(fullText).then(
-          () => showToast('Address copied!'),
-          () => showToast('Unable to copy address automatically.')
+          () => showToast(TRANSLATIONS[currentLang].addressCopiedToast),
+          () => showToast(TRANSLATIONS[currentLang].addressCopyFailedToast)
         );
       } else {
         try {
@@ -267,9 +432,9 @@ document.addEventListener('DOMContentLoaded', () => {
           tempInput.select();
           document.execCommand('copy');
           document.body.removeChild(tempInput);
-          showToast('Address copied!');
+          showToast(TRANSLATIONS[currentLang].addressCopiedToast);
         } catch (err) {
-          showToast('Unable to copy address automatically.');
+          showToast(TRANSLATIONS[currentLang].addressCopyFailedToast);
         }
       }
     });
@@ -302,13 +467,22 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
   
-  const sampleBlessings = [
-    'Heartiest congratulations Sachin & Sahana! Wishing you both a lifetime of love, laughter, and togetherness.',
-    'May your marriage be blessed with endless joy, mutual respect, and boundless prosperity. Shubhamasthu!',
-    'Sending warmest wishes on your Shubha Vivaha! May every day of your new journey together be brighter than the last.',
-    'Wishing the lovely couple a joyous celebration and a lifetime of cherished memories together!',
-    'May Lord Vinayaka shower His choicest blessings upon Sachin & Sahana today and always.',
-  ];
+  const sampleBlessingsByLang = {
+    en: [
+      'Heartiest congratulations Sachin & Sahana! Wishing you both a lifetime of love, laughter, and togetherness.',
+      'May your marriage be blessed with endless joy, mutual respect, and boundless prosperity. Shubhamasthu!',
+      'Sending warmest wishes on your Shubha Vivaha! May every day of your new journey together be brighter than the last.',
+      'Wishing the lovely couple a joyous celebration and a lifetime of cherished memories together!',
+      'May Lord Vinayaka shower His choicest blessings upon Sachin & Sahana today and always.',
+    ],
+    kn: [
+      'ಸಚಿನ್ ಮತ್ತು ಸಹನಾ ಅವರಿಗೆ ಹೃತ್ಪೂರ್ವಕ ವಿವಾಹ ಶುಭಾಶಯಗಳು! ನಿಮ್ಮ ದಾಂಪತ್ಯ ಜೀವನವು ಪ್ರೀತಿ, ನಗು ಮತ್ತು ಸಂತೋಷದಿಂದ ತುಂಬಿರಲಿ.',
+      'ಭಗವಾನ್ ಶ್ರೀ ವಿನಾಯಕನು ನವದಂಪತಿಗಳಿಗೆ ಸುಖ, ಶಾಂತಿ, ಸಮೃದ್ಧಿ ಮತ್ತು ಸುದೀರ್ಘ ಆಯುರಾರೋಗ್ಯವನ್ನು ಕರುಣಿಸಲಿ. ಶುಭಮಸ್ತು!',
+      'ನಿಮ್ಮ ಶುಭ ವಿವಾಹದ ಈ ಪವಿತ್ರ ಸಂದರ್ಭದಲ್ಲಿ ಹೃದಯಪೂರ್ವಕ ಶುಭಾಶಯಗಳು! ನಿಮ್ಮ ಹೊಸ ಜೀವನದ ಪಯಣವು ಸುಖಮಯವಾಗಿರಲಿ.',
+      'ನವದಂಪತಿಗಳಿಗೆ ಸುಖಮಯ ದಾಂಪತ್ಯ ಜೀವನದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು. ದೇವರ ಆಶೀರ್ವಾದ ಸದಾ ನಿಮ್ಮೊಂದಿಗಿರಲಿ!',
+      'ಸಚಿನ್ ಮತ್ತು ಸಹನಾ ಅವರ ಜೀವನದಲ್ಲಿ ಸದಾ ಸುಖ, ಶಾಂತಿ ಮತ್ತು ನೆಮ್ಮದಿ ನೆಲೆಸಲಿ ಎಂದು ಹಾರೈಸುತ್ತೇವೆ.',
+    ],
+  };
   
   const guestbookForm = document.getElementById('guestbook-form');
   const guestNameInput = document.getElementById('guest-name');
@@ -359,7 +533,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderWishes(wishes) {
     if (!wishesListEl) return;
     if (wishesCountEl) {
-      wishesCountEl.textContent = `${wishes.length} ${wishes.length === 1 ? 'Wish' : 'Wishes'}`;
+      const dict = TRANSLATIONS[currentLang];
+      wishesCountEl.textContent = `${wishes.length} ${wishes.length === 1 ? dict.wishSingular : dict.wishPlural}`;
     }
     
     wishesListEl.innerHTML = wishes
@@ -403,7 +578,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Magic-wand / sparkle button fills a sample wedding blessing
   if (inspireWishBtn && guestWishInput) {
     inspireWishBtn.addEventListener('click', () => {
-      guestWishInput.value = sampleBlessings[sampleIdx % sampleBlessings.length];
+      const list = sampleBlessingsByLang[currentLang] || sampleBlessingsByLang.en;
+      guestWishInput.value = list[sampleIdx % list.length];
       sampleIdx += 1;
       guestWishInput.focus();
     });
@@ -416,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const wishVal = guestWishInput.value.trim();
       
       if (!nameVal || !wishVal) {
-        showToast('Please enter both your name and wedding wishes.');
+        showToast(TRANSLATIONS[currentLang].wishValidationToast);
         if (!nameVal) guestNameInput.focus();
         else guestWishInput.focus();
         return;
@@ -442,7 +618,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       guestbookForm.reset();
-      showToast('Thank you! Your wishes have been added.');
+      showToast(TRANSLATIONS[currentLang].wishSubmittedToast);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     7. Apply Language Translation Across All DOM Elements
+     ------------------------------------------------------------------------ */
+  function applyLanguage(lang) {
+    currentLang = lang === 'kn' ? 'kn' : 'en';
+    const dict = TRANSLATIONS[currentLang];
+
+    document.documentElement.lang = currentLang;
+    document.title = dict.pageTitle;
+
+    if (langToggleLabel) {
+      langToggleLabel.textContent = dict.toggleBtnText;
+    }
+    if (langToggleBtn) {
+      langToggleBtn.setAttribute('aria-label', dict.toggleBtnAria);
+    }
+    if (inspireWishBtn) {
+      inspireWishBtn.setAttribute('title', dict.inspireBtnTitle);
+      inspireWishBtn.setAttribute('aria-label', dict.inspireBtnTitle);
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (key && dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (key && dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (key && dict[key] !== undefined) {
+        el.setAttribute('placeholder', dict[key]);
+      }
+    });
+
+    updateCountdown();
+    renderWishes(currentWishes);
+  }
+
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const nextLang = currentLang === 'en' ? 'kn' : 'en';
+      applyLanguage(nextLang);
+      showToast(TRANSLATIONS[nextLang].langSwitchedToast);
     });
   }
 });
